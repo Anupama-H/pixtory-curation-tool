@@ -1,0 +1,16 @@
+<script type="text/javascript" src="/javascripts/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/javascripts/lib/jquery-handlebars-1.1.5.min.js"></script>
+<script type="text/javascript" src="/javascripts/utils.js"></script>
+<script type="text/javascript">
+    /* handlebars templating configs */
+    $.handlebars({
+        templatePath: "/templates",
+        templateExtension: "hbs"
+    });
+</script>
+{{#ifEqual page "CREATE"}}
+<script type="text/javascript" src="/javascripts/create-pixtory.js"></script>
+{{/ifEqual}}
+{{#ifEqual page "PUSHED"}}
+<script type="text/javascript" src="/javascripts/contrib-pixtory-list.js"></script>
+{{/ifEqual}}

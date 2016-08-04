@@ -1,0 +1,20 @@
+{
+    "diagnostics": {
+        "error": {}
+    },
+    "data": [
+        {
+            "id" : 123,
+            "imageUrl" : "http://somedomain.com/image1.jpeg",
+            "likes" : 50,
+            "title" : "Havlock Island",
+            "status" : "PUSHED"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://somedomain.com/image2.jpeg",
+            "likes" : 23,
+            "title" : "Hungry Racoon",
+            "status" : "EDITING"
+        }
+    ]
+}

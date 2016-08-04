@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pixtory Curation Tool</title>
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/normalize.css" />
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/skeleton.css" />
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/styles.css" />
+</head>
+<body>
+    {{>top-bar}}
+    <div class="container u-full-width content-body">
+        <div class="row">
+            <div class="two columns">
+                {{>contributor-nav}}
+            </div>
+            <div class="ten columns">
+                <!-- container for error messages -->
+                <div class="row">
+                    <div class="twelve columns msg-error hidden jsError"></div>
+                </div>
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+    {{>scripts}}
+</body>
+</html>

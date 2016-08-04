@@ -1,0 +1,17 @@
+{
+    "diagnostics": {
+        "error": {}
+    },
+    "data": [
+        {
+            "id" : 1,
+            "message" : "Some notification 1"
+        }, {
+            "id" : 2,
+            "message" : "Some notification 2"
+        }, {
+            "id" : 3,
+            "message" : "Some notification 3"
+        }
+    ]
+}

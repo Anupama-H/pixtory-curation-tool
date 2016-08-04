@@ -1,0 +1,8 @@
+<nav class="left-nav">
+    <ul>
+        <li {{#ifEqual page "CREATE"}}class="selected"{{/ifEqual}}><a href="/contributor/create">Create Pixtory</a></li>
+        <li {{#ifEqual page "PUSHED"}}class="selected"{{/ifEqual}}><a href="/contributor/pushedPixtories">Pixtories In App</a></li>
+        <li {{#ifEqual page "SUBMITTED"}}class="selected"{{/ifEqual}}><a href="/contributor/submittedPixtories">Submitted Pixtories</a></li>
+        <li {{#ifEqual page "NOTIF"}}class="selected"{{/ifEqual}}><a href="/contributor/notifications">Notifictaions</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,11 @@
+{{#for 0 this.length 1}}
+{{#ifModuloEqual this.index 3 0}}
+<div class="row v-offset-15">
+{{/ifModuloEqual}}
+<div class="four columns">
+    <div class="u-full-width pixtory-thumbnail" style="background-image: url({{this.data.imageUrl}})"></div>
+</div>
+{{#ifModuloPlusEqual this.index 3 0}}
+</div>
+{{/ifModuloPlusEqual}}
+{{/for}}

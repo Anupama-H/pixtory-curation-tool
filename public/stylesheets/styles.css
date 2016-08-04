@@ -1,0 +1,60 @@
+/* utility classes */
+.hidden {
+    display: none;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.v-offset-15 {
+    margin-bottom: 15px;
+}
+
+/* utility classes end */
+
+.msg-error {
+    border: 1px solid #d16666;
+    background-color: #e8b2b2;
+    color: #c94c4c;
+    padding: 10px;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+
+.pixtory-logo {
+    width: 50px;
+}
+
+.top-bar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+.content-body {
+    padding: 20px;
+}
+
+.left-nav li {
+    list-style-type: none;
+}
+
+.left-nav a {
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.left-nav a:hover, .left-nav li.selected a {
+    background-color: #26BAFF;
+    color: #FFF;
+}
+
+.pixtory-thumbnail {
+    height: 250px;
+    background-size: cover;
+}
