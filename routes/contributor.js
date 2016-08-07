@@ -1,6 +1,13 @@
 var express = require("express");
 var router = express.Router();
 
+/* Contributor login page */
+router.get("/login", function(req, res, next) {
+  res.render("contributor/login", {
+      "page": "LOGIN"
+  });
+});
+
 /* GET create pixtory page */
 router.get("/create", function(req, res, next) {
   res.render("contributor/create-pixtory", {

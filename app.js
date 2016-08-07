@@ -25,6 +25,14 @@ app.engine(".hbs", exphbs({
             else if (obj.inverse) {
                 return obj.inverse(this);
             }
+        },
+        ifNotEqual: function (val1, val2, obj) {
+            if (val1 !== val2) {
+                return obj.fn(this);
+            }
+            else if (obj.inverse) {
+                return obj.inverse(this);
+            }
         }
     }
 }));

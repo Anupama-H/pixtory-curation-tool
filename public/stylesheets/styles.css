@@ -3,8 +3,14 @@
     display: none;
 }
 
+.align-left {
+    text-align: left;
+    display: inline-block;
+}
+
 .align-right {
     text-align: right;
+    display: inline-block;
 }
 
 .v-offset-15 {
@@ -22,6 +28,7 @@
     margin-bottom: 30px;
 }
 
+/* top bar CSS */
 
 .pixtory-logo {
     width: 50px;
@@ -35,6 +42,8 @@
 .content-body {
     padding: 20px;
 }
+
+/* left nav CSS */
 
 .left-nav li {
     list-style-type: none;
@@ -54,7 +63,79 @@
     color: #FFF;
 }
 
+/* Contributor Pixtory List Page CSS */
+
 .pixtory-thumbnail {
     height: 250px;
     background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail-likes {
+    text-align: right;
+    color: #FFF;
+    padding: 10px;
+}
+
+.thumbnail-likes::before {
+    content: "\2665";
+    margin-right: 5px;
+}
+
+.thumbnail-title {
+    color: #FFF;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+}
+
+.pixtory-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.back-btn::before {
+    content: " ";
+    display: inline-block;
+    background-image: url("/images/back.png");
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+.comment-blk {
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+}
+
+.comment-blk::before {
+    content: " ";
+    display: inline-block;
+    background-image: url("/images/user-icon.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.comment-blk::after {
+    content: "";
+    display: block;
+    clear: both;
 }

@@ -1,0 +1,27 @@
+<div class="row v-offset-15">
+    <div class="twelve columns">
+        <span class="back-btn jsBackBtn">Back</span>
+    </div>
+</div>
+<div class="row">
+    <div class="four columns">
+        <img src="{{this.imageUrl}}" />
+    </div>
+    <div class="eight columns">
+        <div class="v-offset-15">
+            <div class="align-left pixtory-title">{{this.title}}</div>
+            <div class="align-right">{{this.likes}}</div>
+        </div>
+        <div class="v-offset-15">
+            {{this.story}}
+        </div>
+        <div>
+            <h5>Comments</h5>
+            {{#with this.comments}}
+                {{#for 0 this.length 1}}
+                    <div class="comment-blk">{{this.data.text}}</div>
+                {{/for}}
+            {{/with}}
+        </div>
+    </div>
+</div>

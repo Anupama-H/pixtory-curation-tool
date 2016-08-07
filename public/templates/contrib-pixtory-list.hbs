@@ -3,7 +3,10 @@
 <div class="row v-offset-15">
 {{/ifModuloEqual}}
 <div class="four columns">
-    <div class="u-full-width pixtory-thumbnail" style="background-image: url({{this.data.imageUrl}})"></div>
+    <div class="u-full-width pixtory-thumbnail jsPixtoryCard" data-id="{{this.index}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url({{this.data.imageUrl}})">
+        <div class="thumbnail-likes">{{this.data.likes}}</div>
+        <div class="thumbnail-title">{{this.data.title}}</div>
+    </div>
 </div>
 {{#ifModuloPlusEqual this.index 3 0}}
 </div>
