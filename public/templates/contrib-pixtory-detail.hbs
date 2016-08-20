@@ -4,24 +4,54 @@
     </div>
 </div>
 <div class="row">
-    <div class="four columns">
-        <img src="{{this.imageUrl}}" />
+    <div class="five columns">
+        <img src="{{this.imageUrl}}" class="pixtory-image"/>
     </div>
-    <div class="eight columns">
-        <div class="v-offset-15">
-            <div class="align-left pixtory-title">{{this.title}}</div>
-            <div class="align-right">{{this.likes}}</div>
+    <div class="seven columns">
+        <div class="v-offset-15 pixtory-header clearfix">
+            <div class="pull-left pixtory-title">{{this.title}}</div>
+            <div class="pull-right">
+                {{#if this.comments.length}}
+                <div class="pixtory-comments jsComments">{{this.comments.length}}</div>
+                {{/if}}
+                {{#if this.likedUsers.length}}
+                <div class="pixtory-likes jsLikes">
+                    <span class="heart heart-blue"></span>{{this.likedUsers.length}}
+                    <ul class="liked-users hidden">
+                        {{#with this.likedUsers}}
+                        {{#for 0 this.length 1}}
+                        <li>{{this.data}}</li>
+                        {{/for}}
+                        {{/with}}
+                    </ul>
+                </div>
+                {{/if}}
+                {{#if this.status}}
+                <div class="status-icon s-{{this.status}}"></div>
+                {{/if}}
+            </div>
         </div>
-        <div class="v-offset-15">
+        <div class="pixtory-story v-offset-25">
             {{this.story}}
         </div>
-        <div>
-            <h5>Comments</h5>
+        <div class="hidden jsCommentsCont">
+            <div class="jsCommentsBlk">
             {{#with this.comments}}
                 {{#for 0 this.length 1}}
-                    <div class="comment-blk">{{this.data.text}}</div>
+                    <div class="comment-blk">
+                        <img src="{{this.data.profileImage}}" />
+                        <div class="comment-right">
+                            <div>{{this.data.text}}</div>
+                            <div class="comment-name">{{this.data.username}}</div>
+                        </div>
+                    </div>
                 {{/for}}
             {{/with}}
+            </div>
+            <div>
+                <input type="text" placeholder="Insert comment here" class="comments-ip jsCommentInput"/>
+                <a href="javascript:void(0);" class="jsAddComment">Comment</a>
+            </div>
         </div>
     </div>
 </div>

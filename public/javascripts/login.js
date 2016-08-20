@@ -1,6 +1,16 @@
 (function(_window, _AppEvent) {
-    var onLoginSuccess = function() {
-        _window.location.href = "/contributor/pushedPixtories";
+    var onLoginSuccess = function(params) {
+        Utils.makeAjaxCall("/stub-api/get-user-profile?" + $.param(params) , function(data) {
+
+            /* store user data in localstorage */
+            if(localStorage) {
+                localStorage.setItem("userData", JSON.stringify(data));
+            }
+
+            /* redirect to init page */
+            _window.location.href = "/contributor/pushedPixtories";
+
+        }, Utils.showError);
     };
 
     var onLoginFailure = function() {
@@ -11,11 +21,10 @@
         $(".jsLoginFb").on("click", function() {
             FB.login(function(response) {
                 if (response.status === "connected") {
-                    console.log("user is logged in");
                     console.log("accessToken : " + response.authResponse.accessToken);
                     console.log("userId : " + response.authResponse.userID);
                     Cookies.set("loginStrategy", "fb");
-                    onLoginSuccess();
+                    onLoginSuccess({loginStrategy: "fb",id: response.authResponse.userID});
                 } else {
                     onLoginFailure();
                 }
@@ -29,7 +38,7 @@
             googleAuth.signIn().then(function() {
                 console.log("User ID : " + googleAuth.currentUser.get().getId());
                 Cookies.set("loginStrategy", "google");
-                onLoginSuccess();
+                onLoginSuccess({loginStrategy: "google",id: googleAuth.currentUser.get().getId()});
             });
         });
     };

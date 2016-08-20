@@ -1,13 +1,5 @@
-(function(_window, _AppEvent, _App) {
+(function(_window, _AppEvent, _App, _Utils) {
     var loginStrategy = Cookies.get("loginStrategy");
-
-    var logout = function() {
-        /* delete cookies */
-        Cookies.remove("loginStrategy");
-
-        /* redirect to login page */
-        _window.location.href = "/contributor/login";
-    };
 
     var fbSigninChanged = function(response) {
         if(response.status === "connected") {
@@ -15,14 +7,14 @@
             console.log("accessToken : " + response.authResponse.accessToken);
             console.log("userId : " + response.authResponse.userID);
         } else {
-            logout();
+            _Utils.logout();
         }
     };
 
     var googleSigninChanged = function(isSignedIn) {
         if(!isSignedIn) {
             /* redirect to login page */
-            logout();
+            _Utils.logout();
         }
     };
 
@@ -48,7 +40,7 @@
             _App.isLoginValidated = true;
             _AppEvent.publish("login.validated");
         } else {
-            logout();
+            _Utils.logout();
         }
 
         /* Listen for Google sign-in state changes */
@@ -60,7 +52,7 @@
     } else if(loginStrategy === "fb") {
         _AppEvent.subscribe("fb.init", verifyFbLogin);
     } else {
-        logout();
+        _Utils.logout();
     }
 
-})(window, AppEvent, App);
+})(window, AppEvent, App, Utils);

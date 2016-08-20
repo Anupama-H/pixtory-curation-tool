@@ -11,6 +11,14 @@ var serveFile = function(filepath, reponse) {
     });
 };
 
+router.get("/get-user-profile", function(req, res, next) {
+    serveFile("data/user-profile.json", res);
+});
+
+router.get("/notification-count", function(req, res, next) {
+    serveFile("data//notification-count.json", res);
+});
+
 router.get("/pushed-pixtories", function(req, res, next) {
     serveFile("data/pushed-pixtories.json", res);
 });

@@ -5,16 +5,28 @@
     "data": [
         {
             "id" : 123,
-            "imageUrl" : "http://somedomain.com/image1.jpeg",
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
             "likes" : 50,
             "title" : "Havlock Island",
             "status" : "PUSHED"
         }, {
             "id" : 124,
-            "imageUrl" : "http://somedomain.com/image2.jpeg",
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
             "likes" : 23,
             "title" : "Hungry Racoon",
-            "status" : "EDITING"
+            "status" : "PROCESSING"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "likes" : 30,
+            "title" : "Angry Bird",
+            "status" : "REJECTED"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "likes" : 30,
+            "title" : "Angry Bird",
+            "status" : "APPROVED"
         }
     ]
 }
