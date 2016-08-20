@@ -22,7 +22,7 @@
                 successCallback(serverData.data);
             }
         }).fail(function(xhr, textStatus, errorThrown) {
-            console.err("ERROR : " + errorThrown);
+            console.error("ERROR : " + errorThrown);
             errorCallback && errorCallback(textStatus);
         });
     };

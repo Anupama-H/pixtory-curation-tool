@@ -16,7 +16,7 @@ router.get("/get-user-profile", function(req, res, next) {
 });
 
 router.get("/notification-count", function(req, res, next) {
-    serveFile("data//notification-count.json", res);
+    serveFile("data/notification-count.json", res);
 });
 
 router.get("/pushed-pixtories", function(req, res, next) {

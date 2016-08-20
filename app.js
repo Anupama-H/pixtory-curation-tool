@@ -8,6 +8,7 @@ var bodyParser = require("body-parser");
 var contributorRoutes = require("./routes/contributor");
 var adminRoutes = require("./routes/admin");
 var app = express();
+var packageJson = require("./package.json");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -87,6 +88,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+/* set the App config data */
+app.locals = {
+    mode: app.get("env"),
+    assetVersion: packageJson.version
+};
 
 
 module.exports = app;

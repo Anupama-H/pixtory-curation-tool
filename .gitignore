@@ -1,1 +1,5 @@
 node_modules/
+public/stylesheets/stage/
+public/stylesheets/dist/
+public/javascripts/libs.js
+public/javascripts/dist/
