@@ -7,6 +7,9 @@
         };
 
         /* Fetch the list of notifications */
-        Utils.makeAjaxCall("/stub-api/notifications", showNotifications, Utils.showError);
+        Utils.makeAjaxCall("/stub-api/notifications", "GET", {
+            success: showNotifications,
+            error: Utils.showError
+        });
     });
 })(AppEvent);

@@ -12,16 +12,19 @@
         };
 
         var showPixtoryDetail = function(id) {
-            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, function(data) {
-                /* Hide Pixtory thumbnails view */
-                pixtoryThumbnailsElem.hide();
+            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, "GET", {
+                success: function(data) {
+                    /* Hide Pixtory thumbnails view */
+                    pixtoryThumbnailsElem.hide();
 
-                /* Show Pixtory detail view */
-                delete data.likedUsers;
-                delete data.comments;
-                pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
+                    /* Show Pixtory detail view */
+                    delete data.likedUsers;
+                    delete data.comments;
+                    pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
 
-            }, Utils.showError);
+                },
+                error: Utils.showError
+           });
         };
 
         var handleBackBtn = function() {
@@ -31,7 +34,10 @@
         }
 
         /* Fetch the list of Pixtories pushed into the app */
-        Utils.makeAjaxCall("/stub-api/submitted-pixtories", showPixtoryList, Utils.showError);
+        Utils.makeAjaxCall("/stub-api/submitted-pixtories", "GET", {
+            success: showPixtoryList,
+            error: Utils.showError
+        });
 
         /* Attach click handlers on the Pixtory thumbnail elements */
         pixtoryThumbnailsElem.on("click", ".jsPixtoryCard", function(event) {

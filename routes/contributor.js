@@ -1,6 +1,11 @@
 var express = require("express");
 var router = express.Router();
 
+router.all("/*", function(req, res, next) {
+    req.app.locals.layout = "contributor-index";
+    next();
+});
+
 /* Contributor login page */
 router.get("/login", function(req, res, next) {
   res.render("contributor/login", {

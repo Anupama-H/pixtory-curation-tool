@@ -11,11 +11,25 @@
         return false;
     };
 
-    Utils.makeAjaxCall = function(url, successCallback, errorCallback) {
-        $.ajax({
+    Utils.makeAjaxCall = function(url, method, callbacks, requestParams) {
+        var successCallback = callbacks && callbacks.success,
+            errorCallback = callbacks && callbacks.error;
+
+        var ajaxOptions = {
+            type: method,
             url: url,
-            dataType: "json"
-        }).done(function(serverData) {
+            contentType : "application/json"
+        };
+
+        if(requestParams) {
+            if(method === "POST") {
+                ajaxOptions["processData"] = false;
+                ajaxOptions["contentType"] = false;
+            }
+            ajaxOptions["data"] = requestParams;
+        }
+
+        $.ajax(ajaxOptions).done(function(serverData) {
             if(serverData && serverData.diagnostics && Object.keys(serverData.diagnostics.error).length) {
                 errorCallback && errorCallback(serverData.diagnostics.error.message);
             } else {
@@ -68,7 +82,7 @@
             // TODO : call /contributor/logout API
 
             /* redirect to login page */
-            window.location.href = "/contributor/login";
+            window.location.href = App.logoutRedirect;
         };
 
         /* logout from social networks */

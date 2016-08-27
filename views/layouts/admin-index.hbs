@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pixtory Curation Tool</title>
+    {{#ifEqual mode "development"}}
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/normalize.css" />
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/skeleton.css" />
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/styles.css" />
+    {{else}}
+    <link type="text/css" rel="stylesheet"  href="/stylesheets/dist/styles.min.css?v={{assetVersion}}" />
+    {{/ifEqual}}
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" />
+    <!-- Google authentication script -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+<body>
+    <hr class="top-line"/>
+    {{#ifNotEqual page "LOGIN"}}
+    {{>top-bar}}
+    <div class="container content-body">
+        <div class="row">
+            <div class="two columns">
+                {{>admin-nav}}
+            </div>
+            <div class="ten columns">
+                <!-- container for error messages -->
+                <div class="row">
+                    <div class="twelve columns msg-error hidden jsError"></div>
+                </div>
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <!-- Login Page -->
+    {{{body}}}
+    {{/ifNotEqual}}
+    {{>admin-page-scripts}}
+</body>
+</html>

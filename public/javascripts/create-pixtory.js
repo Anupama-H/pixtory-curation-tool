@@ -31,20 +31,14 @@
             formData.append("story", story);
 
             Utils.clearErrors();
+
             // TODO : Update with correct API
-            $.ajax({
-                url: "upload.php",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
+            Utils.makeAjaxCall("upload.php", "POST", {
                 success: function(response) {
                    // .. do something
                 },
-                error: function(jqXHR, textStatus, errorMessage) {
-                   console.log(errorMessage); // Optional
-                }
-            });
+                error: Utils.showError
+            }, formData);
         };
 
         submitBtn.on("click", createPixtory);

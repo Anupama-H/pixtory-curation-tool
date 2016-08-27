@@ -7,6 +7,7 @@ var bodyParser = require("body-parser");
 
 var contributorRoutes = require("./routes/contributor");
 var adminRoutes = require("./routes/admin");
+var contestRoutes = require("./routes/contest");
 var app = express();
 var packageJson = require("./package.json");
 
@@ -47,9 +48,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-/* set up contributor and admin routes */
+/* set up contributor, admin and contest routes */
 app.use("/contributor", contributorRoutes);
 app.use("/admin", adminRoutes);
+app.use("/contest", contestRoutes);
 
 if (app.get("env") === "development") {
     //TODO :: To be removed, only for testing purposes
