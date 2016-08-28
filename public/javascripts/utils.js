@@ -88,6 +88,11 @@
         var loginStrategy = Cookies.get("loginStrategy");
 
         var onLogout = function() {
+            /* delete cookies */
+            Cookies.remove("loginStrategy");
+
+            /* delete localstorage content */
+            localStorage.clear();
             // TODO : call /contributor/logout API
 
             /* redirect to login page */
@@ -98,17 +103,9 @@
         if(loginStrategy === "google") {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(onLogout);
-        } else if(loginStrategy === "fb") {
-            FB.logout(onLogout);
         } else {
             onLogout();
         }
-
-        /* delete cookies */
-        Cookies.remove("loginStrategy");
-
-        /* delete localstorage content */
-        localStorage.clear();
     };
 
     /* Handlebars Helpers */

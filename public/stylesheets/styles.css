@@ -217,10 +217,9 @@ ul li {
     vertical-align: middle;
 }
 
-.user-image:hover .user-dd {
+.user-dd {
     color: #FFF;
     background: rgba(0,0,0,0.8);
-    padding: 5px 30px 0;
     z-index: 10;
     left: -57px;
     top: 68px;
@@ -230,14 +229,9 @@ ul li {
     -o-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
     position: absolute;
-    display: block;
 }
 
-.user-image:hover .user-dd:hover {
-    background-color: #000;
-}
-
-.user-image:hover .user-dd:before {
+.user-dd:before {
     content: "";
     width: 0;
     height: 0;
@@ -246,6 +240,18 @@ ul li {
     position: absolute;
     top: -12px;
     left: 79px;
+}
+
+.user-dd li {
+    padding: 5px 30px 0;
+}
+
+.user-dd:hover li {
+    background-color: #000;
+}
+
+.user-image:hover .user-dd {
+    display: block;
 }
 
 /* left nav CSS */
