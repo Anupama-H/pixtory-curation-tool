@@ -36,7 +36,12 @@
                     pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
 
                 },
-                error: Utils.showError
+                error: function(errorMessage) {
+                    Utils.showMessage({
+                        type: "error",
+                        message: errorMessage
+                    });
+                }
             });
         };
 
@@ -63,14 +68,17 @@
             var comment = $(".jsCommentInput").val();
 
             if(!comment) {
-                Utils.showError("Please enter a comment");
+                Utils.showMessage({
+                    type: "error",
+                    message: "Please enter a comment"
+                });
                 return;
             }
 
             var formData = new FormData();
             formData.append("comment", comment);
 
-            Utils.clearErrors();
+            Utils.clearMessages();
 
             // TODO : Update with correct API
             Utils.makeAjaxCall("/contributor/comment", "POST", {
@@ -82,14 +90,24 @@
                         $(".jsCommentsBlk").append(commentsTemplate);
                     }
                 },
-                error: Utils.showError
+                error: function(errorMessage) {
+                    Utils.showMessage({
+                        type: "error",
+                        message: errorMessage
+                    });
+                }
             }, formData);
         };
 
         /* Fetch the list of Pixtories pushed into the app */
         Utils.makeAjaxCall("/stub-api/pushed-pixtories", "GET", {
             success: showPixtoryList,
-            error: Utils.showError
+            error: function(errorMessage) {
+                Utils.showMessage({
+                    type: "error",
+                    message: errorMessage
+                });
+            }
         });
 
         /* Attach click handlers on the Pixtory thumbnail elements */

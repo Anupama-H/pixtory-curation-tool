@@ -28,7 +28,7 @@ $(function() {
                 if(!value) isValid = false;
                 break;
             case "imageFile":
-                var blobFile = $(".jsPixImage").get(0).files[0];
+                var blobFile = inputElement.get(0).files[0];
                 if(!blobFile) isValid = false;
                 break;
         }
@@ -59,11 +59,14 @@ $(function() {
         var isValid = validateFormData($(".jsStep2 input, .jsStep2 textarea"));
 
         if(!isValid) {
-            Utils.showError("Please correct the form data");
+            Utils.showMessage({
+                type: "error",
+                message: "Please correct the form data"
+            });
             return;
         }
 
-        Utils.clearErrors();
+        Utils.clearMessages();
         var formElement = $(".jsContestForm"),
             blobFile = $(".jsPixImage").get(0).files[0],
             formArray = formElement.serializeArray();
@@ -77,10 +80,16 @@ $(function() {
 
         Utils.makeAjaxCall("contest-upload.php", "POST", {
             success: function() {
-                console.log("Success");
+                Utils.showMessage({
+                    type: "success",
+                    message: "Uploaded Pixtory Successfully !"
+                });
             },
             error: function(message) {
-                Utils.showError(message);
+                Utils.showMessage({
+                    type: "error",
+                    message: message
+                });
             }
         }, formData);
     };
@@ -88,11 +97,14 @@ $(function() {
     var showNextStep = function() {
         var isValid = validateFormData($(".jsStep1 input"));
         if(!isValid) {
-            Utils.showError("Please correct the form data");
+            Utils.showMessage({
+                type: "error",
+                message: "Please correct the form data"
+            });
             return;
         }
 
-        Utils.clearErrors();
+        Utils.clearMessages();
         $(".jsStep1").hide();
         $(".jsStep2").show();
     };

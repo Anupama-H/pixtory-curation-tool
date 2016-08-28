@@ -57,15 +57,56 @@ ul li {
     margin-bottom: 25px;
 }
 
+.h-offset-15 {
+    margin-left: 15px;
+}
+
 /* utility classes end */
 
-.msg-error {
-    border: 1px solid #d16666;
-    background-color: #e8b2b2;
-    color: #c94c4c;
+.msg {
+    font-size: 13px;
     padding: 10px;
     border-radius: 2px;
     margin-bottom: 30px;
+}
+
+.msg-info {
+    color: #268DC1;
+    background-color: #D9EDF7;
+}
+
+.msg-success {
+    color: #36751B;
+    background-color: #DFF0D8;
+}
+
+.msg-error {
+    color: #C53D3D;
+    background-color: #E8B2B2;
+}
+
+/* form styles */
+
+.form-group input[type="text"], .form-group textarea {
+    display: block;
+    border: 0;
+    border-bottom: 1px solid #474747;
+    border-radius: 0;
+    width: 100%;
+}
+
+.form-error {
+    border: 1px solid #D16666 !important;
+}
+
+.submit-btn {
+    width: 50%;
+    font-size: 14px;
+    background-color: #31AEF5 !important;
+}
+
+.submit-btn:hover {
+    background-color: #53BDF9 !important;
 }
 
 .loader {
@@ -81,10 +122,10 @@ ul li {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -65%);
+    -moz-transform: translate(-50%, -65%);
+    -ms-transform: translate(-50%, -65%);
+    transform: translate(-50%, -65%);
 }
 
 .login-pixtory-logo {
@@ -106,8 +147,8 @@ ul li {
 }
 
 .social-cont img {
-    width: 20px;
     height: 20px;
+    margin-right: 6px;
     vertical-align: middle;
 }
 
@@ -122,7 +163,7 @@ ul li {
 /* top bar CSS */
 
 .pixtory-logo {
-    width: 50px;
+    width: 32px;
 }
 
 .top-bar {
@@ -140,10 +181,10 @@ ul li {
 }
 
 .notif-icon {
-    background: url("/images/notif.png");
+    background:url("/images/notif.png");
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 27px;
     background-size: contain;
     margin: 0 20px;
 }
@@ -171,36 +212,40 @@ ul li {
 }
 
 .user-image img {
-    width: 50px;
+    width: 59px;
     border-radius: 50%;
     vertical-align: middle;
 }
 
 .user-image:hover .user-dd {
-    position: absolute;
-    background: #FFF;
-    border: 1px solid #ccc;
-    padding: 5px 30px;
+    color: #FFF;
+    background: rgba(0,0,0,0.8);
+    padding: 5px 30px 0;
     z-index: 10;
     left: -57px;
-    top: 61px;
+    top: 68px;
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     -ms-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     -o-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    position: absolute;
     display: block;
+}
+
+.user-image:hover .user-dd:hover {
+    background-color: #000;
 }
 
 .user-image:hover .user-dd:before {
     content: "";
     width: 0;
     height: 0;
-    border: 8px solid transparent;
-    border-bottom: 8px solid #868585;
+    border: 6px solid transparent;
+    border-bottom: 6px solid rgba(0,0,0,0.8);
     position: absolute;
-    top: -16px;
-    left: 76px;
+    top: -12px;
+    left: 79px;
 }
 
 /* left nav CSS */
@@ -471,23 +516,6 @@ ul li {
     font-weight: 500;
 }
 
-.form-group {
-    display: inline-block;
-    width: 50%;
-}
-
-.form-group input[type="text"], .form-group textarea {
-    display: block;
-    border: 0;
-    border-bottom: 1px solid #474747;
-    border-radius: 0;
-    width: 100%;
-}
-
-.form-error {
-    border: 1px solid #D16666 !important;
-}
-
 .contest-next {
     color: #31AEF5;
     text-align: right;
@@ -517,8 +545,4 @@ ul li {
 }
 .step2 {
     margin-top: 30px;
-}
-
-.contest-submit {
-    background-color: #31AEF5 !important;
 }

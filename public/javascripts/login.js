@@ -12,7 +12,12 @@
                 _window.location.href = App.loginRedirect;
 
             },
-            error: Utils.showError
+            error: function(errorMessage) {
+                Utils.showMessage({
+                    type: "error",
+                    message: errorMessage
+                });
+            }
         });
     };
 

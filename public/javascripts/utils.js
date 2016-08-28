@@ -41,12 +41,21 @@
         });
     };
 
-    Utils.showError = function(message) {
-        $(".jsError").html(message).show();
+    Utils.showMessage = function(obj) {
+        var type = obj.type || "info",
+            message = obj.message,
+            hide = obj.hide;
+
+        var messageElement = $(".jsMessage");
+
+        messageElement.addClass("msg-" + type).html(message).show();
+        if(hide) {
+            messageElement.delay(2000).hide();
+        }
     };
 
-    Utils.clearErrors = function() {
-        $(".jsError").hide().html("");
+    Utils.clearMessages = function() {
+        $(".jsMessage").hide().html("");
     };
 
     Utils.getQueryParameter= function(param) {
