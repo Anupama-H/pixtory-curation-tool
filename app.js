@@ -53,11 +53,12 @@ app.use("/contributor", contributorRoutes);
 app.use("/admin", adminRoutes);
 app.use("/contest", contestRoutes);
 
-if (app.get("env") === "development") {
+/* Commenting out stub-api on only dev mode for now
+if (app.get("env") === "development") { */
     //TODO :: To be removed, only for testing purposes
     var apiRoutes = require("./routes/stub-apis");
     app.use("/stub-api", apiRoutes);
-}
+//}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
