@@ -11,11 +11,25 @@
         return false;
     };
 
-    Utils.makeAjaxCall = function(url, successCallback, errorCallback) {
-        $.ajax({
+    Utils.makeAjaxCall = function(url, method, callbacks, requestParams) {
+        var successCallback = callbacks && callbacks.success,
+            errorCallback = callbacks && callbacks.error;
+
+        var ajaxOptions = {
+            type: method,
             url: url,
-            dataType: "json"
-        }).done(function(serverData) {
+            contentType : "application/json"
+        };
+
+        if(requestParams) {
+            if(method === "POST") {
+                ajaxOptions["processData"] = false;
+                ajaxOptions["contentType"] = false;
+            }
+            ajaxOptions["data"] = requestParams;
+        }
+
+        $.ajax(ajaxOptions).done(function(serverData) {
             if(serverData && serverData.diagnostics && Object.keys(serverData.diagnostics.error).length) {
                 errorCallback && errorCallback(serverData.diagnostics.error.message);
             } else {
@@ -27,12 +41,21 @@
         });
     };
 
-    Utils.showError = function(message) {
-        $(".jsError").html(message).show();
+    Utils.showMessage = function(obj) {
+        var type = obj.type || "info",
+            message = obj.message,
+            hide = obj.hide;
+
+        var messageElement = $(".jsMessage");
+
+        messageElement.addClass("msg-" + type).html(message).show();
+        if(hide) {
+            messageElement.delay(2000).hide();
+        }
     };
 
-    Utils.clearErrors = function() {
-        $(".jsError").hide().html("");
+    Utils.clearMessages = function() {
+        $(".jsMessage").hide().html("");
     };
 
     Utils.getQueryParameter= function(param) {
@@ -65,27 +88,24 @@
         var loginStrategy = Cookies.get("loginStrategy");
 
         var onLogout = function() {
+            /* delete cookies */
+            Cookies.remove("loginStrategy");
+
+            /* delete localstorage content */
+            localStorage.clear();
             // TODO : call /contributor/logout API
 
             /* redirect to login page */
-            window.location.href = "/contributor/login";
+            window.location.href = App.logoutRedirect;
         };
 
         /* logout from social networks */
         if(loginStrategy === "google") {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(onLogout);
-        } else if(loginStrategy === "fb") {
-            FB.logout(onLogout);
         } else {
             onLogout();
         }
-
-        /* delete cookies */
-        Cookies.remove("loginStrategy");
-
-        /* delete localstorage content */
-        localStorage.clear();
     };
 
     /* Handlebars Helpers */

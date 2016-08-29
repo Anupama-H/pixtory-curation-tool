@@ -1,16 +1,24 @@
 (function(_window, _AppEvent) {
     var onLoginSuccess = function(params) {
-        Utils.makeAjaxCall("/stub-api/get-user-profile?" + $.param(params) , function(data) {
+        Utils.makeAjaxCall("/stub-api/get-user-profile?" + $.param(params) , "GET", {
+            success: function(data) {
 
-            /* store user data in localstorage */
-            if(localStorage) {
-                localStorage.setItem("userData", JSON.stringify(data));
+                /* store user data in localstorage */
+                if(localStorage) {
+                    localStorage.setItem("userData", JSON.stringify(data));
+                }
+
+                /* redirect to init page */
+                _window.location.href = App.loginRedirect;
+
+            },
+            error: function(errorMessage) {
+                Utils.showMessage({
+                    type: "error",
+                    message: errorMessage
+                });
             }
-
-            /* redirect to init page */
-            _window.location.href = "/contributor/pushedPixtories";
-
-        }, Utils.showError);
+        });
     };
 
     var onLoginFailure = function() {

@@ -1,23 +1,18 @@
-<form>
-    <div class="row">
-        <div class="three columns">
-            <label for="pixtoryImage">Upload Picture</label>
-        </div>
-        <div class="nine columns">
-            <input class="jsPixtoryImage" type="file" id="pixtoryImage">
-        </div>
+<div class="row center">
+    <div class="twelve columns">
+        <form class="form-group jsCreateForm">
+            <div class="step-half">
+                <label for="contestImage" class="contest-image jsImageName">Upload an Image *</label>
+                <input class="hidden jsPixtoryImage" type="file" name="imageFile" id="contestImage"/>
+            </div>
+            <div class="step-half">
+                <input type="text" name="title" placeholder="Title*" />
+                <input type="text" name="location" placeholder="Location" />
+                <input type="text" name="category" placeholder="Category*" />
+                <textarea type="text" name="story" placeholder="Story*"></textarea>
+                <div class="v-offset-25">&nbsp;</div>
+                <input class="button-primary submit-btn jsCreatePixtory" type="submit" value="Submit">
+            </div>
+        </form>
     </div>
-    <div class="row">
-        <div class="three columns">
-            <label for="pixtoryStory">Story</label>
-        </div>
-        <div class="nine columns">
-            <textarea class="jsPixtoryStory" type="file" id="pixtoryStory" placeholder="Enter Story"></textarea>
-        </div>
-    </div>
-    <div class="row">
-        <div class="twelve columns">
-            <input class="button-primary jsCreatePixtory" type="submit" value="Submit">
-        </div>
-    </div>
-</form>
+</div>

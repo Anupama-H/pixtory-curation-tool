@@ -27,6 +27,24 @@
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "APPROVED"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "likes" : 30,
+            "title" : "Angry Bird",
+            "status" : "APPROVED"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "likes" : 30,
+            "title" : "Angry Bird",
+            "status" : "APPROVED"
+        }, {
+            "id" : 124,
+            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "likes" : 30,
+            "title" : "Angry Bird",
+            "status" : "APPROVED"
         }
     ]
 }

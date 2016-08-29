@@ -8,7 +8,10 @@
             templatePath: "/templates",
             templateExtension: "hbs"
         });
-        var App = {};
+        var App = {
+            loginRedirect: "/contributor/pushedPixtories",
+            logoutRedirect: "/contributor/login"
+        };
     </script>
     <script type="text/javascript" src="/javascripts/utils.js"></script>
     <script type="text/javascript" src="/javascripts/events.js"></script>
@@ -41,7 +44,10 @@
             templatePath: "/templates",
             templateExtension: "hbs"
         });
-        var App = {};
+        var App = {
+            loginRedirect: "/contributor/pushedPixtories",
+            logoutRedirect: "/contributor/login"
+        };
     </script>
     <script type="text/javascript" src="/javascripts/dist/utils.min.js?v={{assetVersion}}"></script>
     <script type="text/javascript" src="/javascripts/dist/events.min.js?v={{assetVersion}}"></script>

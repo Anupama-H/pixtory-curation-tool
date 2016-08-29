@@ -17,9 +17,11 @@
         }
 
         /* fetch notification count data */
-        Utils.makeAjaxCall("/stub-api/notification-count", function(data) {
-            $(".jsNotifCount").attr("data-count", data.count).addClass("show-count");
-        })
+        Utils.makeAjaxCall("/stub-api/notification-count", "GET", {
+            success: function(data) {
+                $(".jsNotifCount").attr("data-count", data.count).addClass("show-count");
+            }
+        });
     };
 
     /* Show top bar user data */

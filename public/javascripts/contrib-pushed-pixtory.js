@@ -26,15 +26,23 @@
         };
 
         var showPixtoryDetail = function(id) {
-            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, function(data) {
-                /* Hide Pixtory thumbnails view */
-                pixtoryThumbnailsElem.hide();
+            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, "GET", {
+                success: function(data) {
+                    /* Hide Pixtory thumbnails view */
+                    pixtoryThumbnailsElem.hide();
 
-                /* Show Pixtory detail view */
-                delete data.status;
-                pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
+                    /* Show Pixtory detail view */
+                    delete data.status;
+                    pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
 
-            }, Utils.showError);
+                },
+                error: function(errorMessage) {
+                    Utils.showMessage({
+                        type: "error",
+                        message: errorMessage
+                    });
+                }
+            });
         };
 
         var handleBackBtn = function() {
@@ -60,22 +68,20 @@
             var comment = $(".jsCommentInput").val();
 
             if(!comment) {
-                Utils.showError("Please enter a comment");
+                Utils.showMessage({
+                    type: "error",
+                    message: "Please enter a comment"
+                });
                 return;
             }
 
             var formData = new FormData();
             formData.append("comment", comment);
 
-            Utils.clearErrors();
+            Utils.clearMessages();
 
             // TODO : Update with correct API
-            $.ajax({
-                url: "/contributor/comment",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
+            Utils.makeAjaxCall("/contributor/comment", "POST", {
                 success: function(response) {
                     var user = Utils.getUser();
                     if(user) {
@@ -84,14 +90,25 @@
                         $(".jsCommentsBlk").append(commentsTemplate);
                     }
                 },
-                error: function(jqXHR, textStatus, errorMessage) {
-                   console.log(errorMessage); // Optional
+                error: function(errorMessage) {
+                    Utils.showMessage({
+                        type: "error",
+                        message: errorMessage
+                    });
                 }
-            });
+            }, formData);
         };
 
         /* Fetch the list of Pixtories pushed into the app */
-        Utils.makeAjaxCall("/stub-api/pushed-pixtories", showPixtoryList, Utils.showError);
+        Utils.makeAjaxCall("/stub-api/pushed-pixtories", "GET", {
+            success: showPixtoryList,
+            error: function(errorMessage) {
+                Utils.showMessage({
+                    type: "error",
+                    message: errorMessage
+                });
+            }
+        });
 
         /* Attach click handlers on the Pixtory thumbnail elements */
         pixtoryThumbnailsElem.on("click", ".jsPixtoryCard", function(event) {
