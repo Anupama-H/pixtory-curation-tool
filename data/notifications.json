@@ -7,17 +7,17 @@
             "id" : 1,
             "message" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
             "pixtoryId" : 123,
-            "profileImage" : "http://localhost:3000/images/user.jpg"
+            "profileImage" : "/images/user.jpg"
         }, {
             "id" : 2,
             "message" : "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
             "pixtoryId" : 124,
-            "profileImage" : "http://localhost:3000/images/user.jpg"
+            "profileImage" : "/images/user.jpg"
         }, {
             "id" : 3,
             "message" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
             "pixtoryId" : 125,
-            "profileImage" : "http://localhost:3000/images/user.jpg"
+            "profileImage" : "/images/user.jpg"
         }
     ]
 }

@@ -4,7 +4,7 @@
     },
     "data": {
         "username": "Mary",
-        "profileImage": "http://localhost:3000/images/user.jpg",
+        "profileImage": "/images/user.jpg",
         "role": "contributor"
      }
 }

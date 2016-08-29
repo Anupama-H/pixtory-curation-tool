@@ -4,7 +4,7 @@
     },
     "data": {
             "id" : 123,
-            "imageUrl" : "http://localhost:3000/images/test-image.jpeg",
+            "imageUrl" : "/images/test-image.jpeg",
             "likedUsers" : ["John Doe", "Jill Meyer", "Joe Dash"],
             "title" : "Havlock Island",
             "status" : "REJECTED",
@@ -14,12 +14,12 @@
                     "id" : 1,
                     "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "username" : "John Doe",
-                    "profileImage" : "http://localhost:3000/images/user.jpg"
+                    "profileImage" : "/images/user.jpg"
                 }, {
                     "id" : 2,
                     "text" : "Some other comment",
                     "username" : "Joe",
-                    "profileImage" : "http://localhost:3000/images/user.jpg"
+                    "profileImage" : "/images/user.jpg"
                 }
             ]
         }
