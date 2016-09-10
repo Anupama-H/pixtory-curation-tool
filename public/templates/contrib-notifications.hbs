@@ -1,9 +1,9 @@
 {{#for 0 this.length 1}}
-    <a href="/contributor/pushedPixtories?detail={{this.data.pixtoryId}}" class="notif-card">
+    <a href="/portal/contributor/pushedPixtories?detail={{this.data.pixtoryId}}" class="notif-card">
         {{#if this.data.profileImage}}
         <img src="{{this.data.profileImage}}" alt="Profile Image" class="notif-image"/>
         {{else}}
-        <img src="/images/user-icon.png" alt="Profile Image" class="notif-image"/>
+        <img src="/portal/images/user-icon.png" alt="Profile Image" class="notif-image"/>
         {{/if}}
         <span>{{this.data.message}}</span>
     </a>

@@ -26,7 +26,7 @@
         };
 
         var showPixtoryDetail = function(id) {
-            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, "GET", {
+            Utils.makeAjaxCall(App.apiEndPoint + "/contributor/pixtoryDetail?id=" + id, "GET", {
                 success: function(data) {
                     /* Hide Pixtory thumbnails view */
                     pixtoryThumbnailsElem.hide();
@@ -100,7 +100,7 @@
         };
 
         /* Fetch the list of Pixtories pushed into the app */
-        Utils.makeAjaxCall("/stub-api/pushed-pixtories", "GET", {
+        Utils.makeAjaxCall(App.apiEndPoint + "/contributor/pixtoriesInApp", "GET", {
             success: showPixtoryList,
             error: function(errorMessage) {
                 Utils.showMessage({

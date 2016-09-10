@@ -60,14 +60,13 @@
                 formArray = formElement.serializeArray();
 
             var formData = new FormData();
-            formData.append("imageFile", blobFile);
+            formData.append("image", blobFile);
 
             for(var i=0, len=formArray.length; i<len; i++) {
                 formData.append(formArray[i].name, formArray[i].value);
             }
 
-            // TODO : Update with correct API
-            Utils.makeAjaxCall("upload.php", "POST", {
+            Utils.makeAjaxCall(App.apiEndPoint + "/contributor/createpixtory", "POST", {
                 success: function(response) {
                     Utils.showMessage({
                         type: "success",

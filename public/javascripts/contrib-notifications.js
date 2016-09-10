@@ -7,7 +7,7 @@
         };
 
         /* Fetch the list of notifications */
-        Utils.makeAjaxCall("/stub-api/notifications", "GET", {
+        Utils.makeAjaxCall("/portal/stub-api/notifications", "GET", {
             success: showNotifications,
             error: function(errorMessage) {
                 Utils.showMessage({

@@ -181,7 +181,7 @@ ul li {
 }
 
 .notif-icon {
-    background:url("/images/notif.png");
+    background:url("/portal/images/notif.png");
     display: inline-block;
     width: 22px;
     height: 27px;
@@ -356,7 +356,7 @@ ul li {
 .back-btn:before {
     content: " ";
     display: inline-block;
-    background-image: url("/images/back.png");
+    background-image: url("/portal/images/back.png");
     background-size: contain;
     width: 20px;
     height: 20px;
@@ -389,7 +389,7 @@ ul li {
 
 .pixtory-comments:before {
     content: " ";
-    background-image: url("/images/comment.png");
+    background-image: url("/portal/images/comment.png");
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -459,7 +459,6 @@ ul li {
 /* Contributor All Pixtories Page CSS */
 
 .status-icon {
-    background-color: rgba(255, 255, 255, 0.9);
     background-size: contain;
     width: 20px;
     height: 20px;
@@ -469,19 +468,35 @@ ul li {
 }
 
 .s-PUSHED {
-    background-image: url("/images/pushed.png");
+    background-image: url("/portal/images/pushed.png");
 }
 
 .s-APPROVED {
-    background-image: url("/images/approved.png");
+    background-image: url("/portal/images/approved.png");
 }
 
 .s-PROCESSING {
-    background-image: url("/images/processing.png");
+    background-image: url("/portal/images/processing.png");
 }
 
 .s-REJECTED {
-    background-image: url("/images/rejected.png");
+    background-image: url("/portal/images/rejected.png");
+}
+
+.s-blk-PUSHED {
+    background-image: url("/portal/images/pushed-blk.png");
+}
+
+.s-blk-APPROVED {
+    background-image: url("/portal/images/approved-blk.png");
+}
+
+.s-blk-PROCESSING {
+    background-image: url("/portal/images/processing-blk.png");
+}
+
+.s-blk-REJECTED {
+    background-image: url("/portal/images/rejected-blk.png");
 }
 
 /* Contributor Notifications Page CSS */
@@ -541,7 +556,7 @@ ul li {
 
 .contest-image:before {
     content: " ";
-    background-image: url("/images/upArrow.png");
+    background-image: url("/portal/images/upArrow.png");
     background-size: contain;
     width: 67px;
     height: 67px;

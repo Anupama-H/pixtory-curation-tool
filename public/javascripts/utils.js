@@ -24,14 +24,17 @@
         if(requestParams) {
             if(method === "POST") {
                 ajaxOptions["processData"] = false;
-                ajaxOptions["contentType"] = false;
+                if(Object.prototype.toString.call(requestParams) === "[object FormData]") {
+                    /* do not set any contentType for form data */
+                    ajaxOptions["contentType"] = false;
+                }
             }
             ajaxOptions["data"] = requestParams;
         }
 
         $.ajax(ajaxOptions).done(function(serverData) {
-            if(serverData && serverData.diagnostics && Object.keys(serverData.diagnostics.error).length) {
-                errorCallback && errorCallback(serverData.diagnostics.error.message);
+            if(serverData && serverData.diagnostics && serverData.diagnostics.errorMessage) {
+                errorCallback && errorCallback(serverData.diagnostics.errorMessage);
             } else {
                 successCallback(serverData.data);
             }
@@ -93,7 +96,10 @@
 
             /* delete localstorage content */
             localStorage.clear();
+
             // TODO : call /contributor/logout API
+            Utils.makeAjaxCall(App.apiEndPoint + "/contributor/logout", "GET", {
+            });
 
             /* redirect to login page */
             window.location.href = App.logoutRedirect;
@@ -141,6 +147,15 @@
             return options.fn(this);
         } else {
             return options.inverse(this);
+        }
+    });
+
+    Handlebars.registerHelper("ifEqual", function (val1, val2, obj) {
+        if (val1 === val2) {
+            return obj.fn(this);
+        }
+        else if (obj.inverse) {
+            return obj.inverse(this);
         }
     });
 

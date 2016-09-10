@@ -5,22 +5,22 @@
     "data": [
         {
             "id" : 123,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 50,
             "title" : "Havlock Island"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 23,
             "title" : "Hungry Racoon"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird"
         }

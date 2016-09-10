@@ -1,5 +1,7 @@
 (function(_window, _AppEvent) {
 
+    App.apiEndPoint = "http://ec2-52-32-119-223.us-west-2.compute.amazonaws.com/api";
+
     if(App.isLoginValidated) {
         _AppEvent.publish("load.page");
     } else {
@@ -17,7 +19,7 @@
         }
 
         /* fetch notification count data */
-        Utils.makeAjaxCall("/stub-api/notification-count", "GET", {
+        Utils.makeAjaxCall("/portal/stub-api/notification-count", "GET", {
             success: function(data) {
                 $(".jsNotifCount").attr("data-count", data.count).addClass("show-count");
             }

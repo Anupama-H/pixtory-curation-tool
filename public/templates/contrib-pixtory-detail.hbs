@@ -11,8 +11,8 @@
         <div class="v-offset-15 pixtory-header clearfix">
             <div class="pull-left pixtory-title">{{this.title}}</div>
             <div class="pull-right">
-                {{#if this.comments.length}}
-                <div class="pixtory-comments jsComments">{{this.comments.length}}</div>
+                {{#if this.commentList.length}}
+                <div class="pixtory-comments jsComments">{{this.commentList.length}}</div>
                 {{/if}}
                 {{#if this.likedUsers.length}}
                 <div class="pixtory-likes jsLikes">
@@ -27,7 +27,7 @@
                 </div>
                 {{/if}}
                 {{#if this.status}}
-                <div class="status-icon s-{{this.status}}"></div>
+                <div class="status-icon s-blk-{{this.status}}"></div>
                 {{/if}}
             </div>
         </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="hidden jsCommentsCont">
             <div class="jsCommentsBlk">
-            {{#with this.comments}}
+            {{#with this.commentList}}
                 {{#for 0 this.length 1}}
                     <div class="comment-blk">
                         <img src="{{this.data.profileImage}}" />

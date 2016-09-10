@@ -5,43 +5,43 @@
     "data": [
         {
             "id" : 123,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 50,
             "title" : "Havlock Island",
             "status" : "PUSHED"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 23,
             "title" : "Hungry Racoon",
             "status" : "PROCESSING"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "REJECTED"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "APPROVED"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "APPROVED"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "APPROVED"
         }, {
             "id" : 124,
-            "imageUrl" : "/images/test-image.jpeg",
+            "imageUrl" : "/portal/images/test-image.jpeg",
             "likes" : 30,
             "title" : "Angry Bird",
             "status" : "APPROVED"

@@ -1,9 +1,12 @@
+{{#ifEqual this.length 0}}
+    <div class="center">No Data Found</div>
+{{/ifEqual}}
 {{#for 0 this.length 1}}
 {{#ifModuloEqual this.index 3 0}}
 <div class="row v-offset-15">
 {{/ifModuloEqual}}
 <div class="four columns">
-    <div class="u-full-width pixtory-thumbnail jsPixtoryCard" data-id="{{this.index}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url({{this.data.imageUrl}})">
+    <div class="u-full-width pixtory-thumbnail jsPixtoryCard" data-id="{{this.data.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url({{this.data.imageUrl}})">
         {{#if this.data.likes}}
         <div class="thumbnail-likes"><span class="heart heart-white heart-small"></span>{{this.data.likes}}</div>
         {{/if}}

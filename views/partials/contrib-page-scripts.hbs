@@ -1,75 +1,75 @@
 {{#ifEqual mode "development"}}
-    <script type="text/javascript" src="/javascripts/lib/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/javascripts/lib/jquery-handlebars-1.1.5.min.js"></script>
-    <script type="text/javascript" src="/javascripts/lib/js.cookie.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/jquery-handlebars-1.1.5.min.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/js.cookie.js"></script>
     <script type="text/javascript">
         /* handlebars templating configs */
         $.handlebars({
-            templatePath: "/templates",
+            templatePath: "/portal/templates",
             templateExtension: "hbs"
         });
         var App = {
-            loginRedirect: "/contributor/pushedPixtories",
-            logoutRedirect: "/contributor/login"
+            loginRedirect: "/portal/contributor/pushedPixtories",
+            logoutRedirect: "/portal/contributor/login"
         };
     </script>
-    <script type="text/javascript" src="/javascripts/utils.js"></script>
-    <script type="text/javascript" src="/javascripts/events.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/utils.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/events.js"></script>
     {{#ifEqual page "LOGIN"}}
-    <script type="text/javascript" src="/javascripts/login.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/login.js"></script>
     {{else}}
-    <script type="text/javascript" src="/javascripts/check-login.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/check-login.js"></script>
     {{/ifEqual}}
     <!-- Login initialization script -->
-    <script type="text/javascript" src="/javascripts/login-init.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/login-init.js"></script>
     <!-- Include page specific scripts -->
     {{#ifEqual page "CREATE"}}
-    <script type="text/javascript" src="/javascripts/create-pixtory.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/create-pixtory.js"></script>
     {{/ifEqual}}
     {{#ifEqual page "PUSHED"}}
-    <script type="text/javascript" src="/javascripts/contrib-pushed-pixtory.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/contrib-pushed-pixtory.js"></script>
     {{/ifEqual}}
     {{#ifEqual page "SUBMITTED"}}
-    <script type="text/javascript" src="/javascripts/contrib-all-pixtory.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/contrib-all-pixtory.js"></script>
     {{/ifEqual}}
     {{#ifEqual page "NOTIF"}}
-    <script type="text/javascript" src="/javascripts/contrib-notifications.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/contrib-notifications.js"></script>
     {{/ifEqual}}
-    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/app.js"></script>
 {{else}}
-    <script type="text/javascript" src="/javascripts/dist/libs.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/libs.min.js?v={{assetVersion}}"></script>
     <script type="text/javascript">
         /* handlebars templating configs */
         $.handlebars({
-            templatePath: "/templates",
+            templatePath: "/portal/templates",
             templateExtension: "hbs"
         });
         var App = {
-            loginRedirect: "/contributor/pushedPixtories",
-            logoutRedirect: "/contributor/login"
+            loginRedirect: "/portal/contributor/pushedPixtories",
+            logoutRedirect: "/portal/contributor/login"
         };
     </script>
-    <script type="text/javascript" src="/javascripts/dist/utils.min.js?v={{assetVersion}}"></script>
-    <script type="text/javascript" src="/javascripts/dist/events.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/utils.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/events.min.js?v={{assetVersion}}"></script>
     {{#ifEqual page "LOGIN"}}
-    <script type="text/javascript" src="/javascripts/dist/login.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/login.min.js?v={{assetVersion}}"></script>
     {{else}}
-    <script type="text/javascript" src="/javascripts/dist/check-login.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/check-login.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
     <!-- Login initialization script -->
-    <script type="text/javascript" src="/javascripts/dist/login-init.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/login-init.min.js?v={{assetVersion}}"></script>
     <!-- Include page specific scripts -->
     {{#ifEqual page "CREATE"}}
-    <script type="text/javascript" src="/javascripts/dist/create-pixtory.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/create-pixtory.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
     {{#ifEqual page "PUSHED"}}
-    <script type="text/javascript" src="/javascripts/dist/contrib-pushed-pixtory.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/contrib-pushed-pixtory.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
     {{#ifEqual page "SUBMITTED"}}
-    <script type="text/javascript" src="/javascripts/dist/contrib-all-pixtory.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/contrib-all-pixtory.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
     {{#ifEqual page "NOTIF"}}
-    <script type="text/javascript" src="/javascripts/dist/contrib-notifications.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/contrib-notifications.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
-    <script type="text/javascript" src="/javascripts/dist/app.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/app.min.js?v={{assetVersion}}"></script>
 {{/ifEqual}}

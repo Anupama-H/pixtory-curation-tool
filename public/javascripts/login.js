@@ -1,6 +1,10 @@
 (function(_window, _AppEvent) {
     var onLoginSuccess = function(params) {
-        Utils.makeAjaxCall("/stub-api/get-user-profile?" + $.param(params) , "GET", {
+
+//        Utils.makeAjaxCall(App.apiEndPoint + "/contributor/register", "POST", , JSON.stringify(params));
+
+//        Utils.makeAjaxCall("/portal/stub-api/get-user-profile?" + $.param(params) , "GET", {
+        Utils.makeAjaxCall(App.apiEndPoint + "/contributor/register", "POST", {
             success: function(data) {
 
                 /* store user data in localstorage */
@@ -18,7 +22,7 @@
                     message: errorMessage
                 });
             }
-        });
+        }, JSON.stringify(params));
     };
 
     var onLoginFailure = function() {
@@ -32,11 +36,14 @@
                     console.log("accessToken : " + response.authResponse.accessToken);
                     console.log("userId : " + response.authResponse.userID);
                     Cookies.set("loginStrategy", "fb");
-                    onLoginSuccess({loginStrategy: "fb",id: response.authResponse.userID});
+                    FB.api("/" + response.authResponse.userID, {fields: "name,email,picture"}, function(response) {
+                        onLoginSuccess({loginStrategy: "fb", fbId: response.id, userName: response.name, userEmail: response.email, userImageUrl: response.picture.data.url});
+                    });
+
                 } else {
                     onLoginFailure();
                 }
-            });
+            }, {scope: "public_profile, email"});
         });
     };
 
@@ -44,9 +51,9 @@
         $(".jsLoginGoogle").on("click", function() {
             var googleAuth = gapi.auth2.getAuthInstance();
             googleAuth.signIn().then(function() {
-                console.log("User ID : " + googleAuth.currentUser.get().getId());
+                var currentUser = googleAuth.currentUser.get().getBasicProfile();
                 Cookies.set("loginStrategy", "google");
-                onLoginSuccess({loginStrategy: "google",id: googleAuth.currentUser.get().getId()});
+                onLoginSuccess({loginStrategy: "google", userName: currentUser.getName(), userEmail: currentUser.getEmail(), userImageUrl: currentUser.getImageUrl()});
             });
         });
     };

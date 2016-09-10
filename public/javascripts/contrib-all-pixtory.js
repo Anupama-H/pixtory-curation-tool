@@ -1,5 +1,11 @@
 (function(_AppEvent) {
     _AppEvent.subscribe("load.page", function() {
+        var statusMap = {
+                1: "SUBMITTED",
+                2: "PROCESSING", //processing
+                3: "REJECTED", //rejected
+                4: "PUSHED" // pushed
+            };
 
         var thumbnailsContainer = $(".jqThumbnailsCont"),
             pixtoryThumbnailsElem = $(".jsPixtoryThumbnails"),
@@ -10,13 +16,14 @@
         var showPixtoryList = function(data) {
             var processedData = data.map(function(obj) {
                 delete obj.likes;
+                obj.status = statusMap[obj.status];
                 return obj;
             });
             pixtoryThumbnailsElem.render("contrib-pixtory-list", processedData);
         };
 
         var showPixtoryDetail = function(id) {
-            Utils.makeAjaxCall("/stub-api/pixtory-detail?id=" + id, "GET", {
+            Utils.makeAjaxCall(App.apiEndPoint + "/contributor/pixtoryDetail?id=" + id, "GET", {
                 success: function(data) {
                     /* Hide Pixtory thumbnails view */
                     thumbnailsContainer.hide();
@@ -24,6 +31,7 @@
                     /* Show Pixtory detail view */
                     delete data.likedUsers;
                     delete data.comments;
+                    data.status = statusMap[data.status];
                     pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
 
                 },
@@ -56,8 +64,8 @@
             showPixtoryList(filteredData);
         }
 
-        /* Fetch the list of Pixtories pushed into the app */
-        Utils.makeAjaxCall("/stub-api/submitted-pixtories", "GET", {
+        /* Fetch the list of All Submitted Pixtories */
+        Utils.makeAjaxCall(App.apiEndPoint + "/contributor/pixtoriesSubmitted", "GET", {
             success: function(data) {
                 allPixtories = data;
                 showPixtoryList(allPixtories);
