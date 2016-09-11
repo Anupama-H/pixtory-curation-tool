@@ -1,6 +1,7 @@
 (function(_window, _AppEvent) {
 
     App.apiEndPoint = "http://ec2-52-32-119-223.us-west-2.compute.amazonaws.com/api";
+//    App.apiEndPoint = "http://pixtory.dev.com/api";
 
     if(App.isLoginValidated) {
         _AppEvent.publish("load.page");
@@ -14,7 +15,7 @@
         /* retrieve user data from local storage */
         var user = Utils.getUser();
         if(user) {
-            user.username && $(".jsUserName").html("Welcome, " + user.username);
+            user.userName && $(".jsUserName").html("Welcome, " + user.userName);
             user.imageUrl && $(".jsUserImage").html("<img src='" + user.imageUrl + "' />");
         }
 
