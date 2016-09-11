@@ -1,8 +1,6 @@
 (function(_window, _AppEvent) {
     var onLoginSuccess = function(params) {
 
-//        Utils.makeAjaxCall(App.apiEndPoint + "/contributor/register", "POST", , JSON.stringify(params));
-
 //        Utils.makeAjaxCall("/portal/stub-api/get-user-profile?" + $.param(params) , "GET", {
         Utils.makeAjaxCall(App.apiEndPoint + "/contributor/register", "POST", {
             success: function(data) {

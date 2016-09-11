@@ -3,8 +3,9 @@
         "error": {}
     },
     "data": {
-        "username": "Mary",
-        "profileImage": "/portal/images/user.jpg",
-        "role": "contributor"
+        "userDetails" : {
+            "userName": "Mary",
+            "imageUrl": "/portal/images/user.jpg"
+        }
      }
 }

@@ -30,7 +30,7 @@
 
                     /* Show Pixtory detail view */
                     delete data.likedUsers;
-                    delete data.comments;
+                    delete data.commentList;
                     data.status = statusMap[data.status];
                     pixtoryDetailElem.render("contrib-pixtory-detail", data).show();
 

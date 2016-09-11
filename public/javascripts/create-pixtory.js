@@ -56,7 +56,8 @@
 
             Utils.clearMessages();
             var formElement = $(".jsCreateForm"),
-                blobFile = $(".jsPixtoryImage").get(0).files[0],
+                imageElement = $(".jsPixtoryImage"),
+                blobFile = imageElement.get(0).files[0],
                 formArray = formElement.serializeArray();
 
             var formData = new FormData();
@@ -72,6 +73,10 @@
                         type: "success",
                         message: "Uploaded Pixtory Successfully!"
                     });
+
+                    /* clear form fields */
+                    formElement[0].reset();
+                    imageElement.trigger("change");
                 },
                 error: function(errorMessage) {
                     Utils.showMessage({
@@ -86,7 +91,11 @@
         $(".jsCreatePixtory").on("click", createPixtory);
         $(".jsPixtoryImage").on("change", function() {
             var blobFile = $(this).get(0).files[0];
-            $(".jsImageName").text("Uploaded : " + blobFile.name);
+            if(blobFile) {
+                $(".jsImageName").text("Uploaded : " + blobFile.name);
+            } else {
+                $(".jsImageName").text("Upload an Image *");
+            }
         });
     });
 })(AppEvent);

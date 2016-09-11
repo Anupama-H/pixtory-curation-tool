@@ -2,6 +2,7 @@
     _AppEvent.subscribe("load.page", function() {
         var pixtoryThumbnailsElem = $(".jsPixtoryThumbnails"),
             pixtoryDetailElem = $(".jsPixtoryDetail");
+        var idParam;
 
         var clearQueryParam = function() {
             if (history.pushState) {
@@ -65,9 +66,12 @@
         };
 
         var addComment = function() {
-            var comment = $(".jsCommentInput").val();
+            var commentObj = {
+                comment : $(".jsCommentInput").val(),
+                contentId: idParam
+            };
 
-            if(!comment) {
+            if(!commentObj.comment) {
                 Utils.showMessage({
                     type: "error",
                     message: "Please enter a comment"
@@ -75,20 +79,19 @@
                 return;
             }
 
-            var formData = new FormData();
-            formData.append("comment", comment);
-
             Utils.clearMessages();
 
-            // TODO : Update with correct API
-            Utils.makeAjaxCall("/contributor/comment", "POST", {
+            Utils.makeAjaxCall(App.apiEndPoint + "/contributor/comment", "POST", {
                 success: function(response) {
                     var user = Utils.getUser();
                     if(user) {
-                        var commentsTemplate = "<div class='comment-blk'><img src='" + user.profileImage + "'/><div class='comment-right'><div>" + comment + "</div><div class='comment-name'>" + user.username + "</div></div></div>";
+                        var commentsTemplate = "<div class='comment-blk'><img src='" + user.imageUrl + "'/><div class='comment-right'><div>" + commentObj.comment + "</div><div class='comment-name'>" + user.userName + "</div></div></div>";
 
                         $(".jsCommentsBlk").append(commentsTemplate);
                     }
+
+                    /* clear input field */
+                    $(".jsCommentInput").val("");
                 },
                 error: function(errorMessage) {
                     Utils.showMessage({
@@ -96,7 +99,7 @@
                         message: errorMessage
                     });
                 }
-            }, formData);
+            }, JSON.stringify(commentObj));
         };
 
         /* Fetch the list of Pixtories pushed into the app */
@@ -127,7 +130,7 @@
         pixtoryDetailElem.on("click", ".jsAddComment", addComment);
 
         /* if "detail" query parameter is present in URL, show Pixtory Detail Page */
-        var idParam = Utils.getQueryParameter("detail");
+        idParam = Utils.getQueryParameter("detail");
         if(idParam) {
             showPixtoryDetail(idParam);
         }
