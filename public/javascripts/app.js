@@ -15,7 +15,7 @@
         var user = Utils.getUser();
         if(user) {
             user.username && $(".jsUserName").html("Welcome, " + user.username);
-            user.profileImage && $(".jsUserImage").html("<img src='" + user.profileImage + "' />");
+            user.imageUrl && $(".jsUserImage").html("<img src='" + user.imageUrl + "' />");
         }
 
         /* fetch notification count data */

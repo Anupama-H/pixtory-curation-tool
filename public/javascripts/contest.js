@@ -1,4 +1,6 @@
 $(function() {
+    var App = App || {};
+    App.apiEndPoint = "http://ec2-52-32-119-223.us-west-2.compute.amazonaws.com/api";
 
     var validateInputField = function(inputElement) {
         var attr = inputElement.attr("name"),
@@ -72,13 +74,13 @@ $(function() {
             formArray = formElement.serializeArray();
 
         var formData = new FormData();
-        formData.append("imageFile", blobFile);
+        formData.append("image", blobFile);
 
         for(var i=0, len=formArray.length; i<len; i++) {
             formData.append(formArray[i].name, formArray[i].value);
         }
 
-        Utils.makeAjaxCall("contest-upload.php", "POST", {
+        Utils.makeAjaxCall(App.apiEndPoint + "/contest/createpixtory", "POST", {
             success: function() {
                 Utils.showMessage({
                     type: "success",
@@ -114,7 +116,17 @@ $(function() {
     $(".jsSubmit").on("click", submitPixtory);
     $(".jsPixImage").on("change", function() {
         var blobFile = $(this).get(0).files[0];
-        $(".jsImageName").text("Uploaded : " + blobFile.name);
+        var reader = new FileReader();
+        var imageNameElement = $(".jsImageName");
+
+        reader.onload = function (e) {
+            $(".jsUploadedImg").attr("src", e.target.result);
+        }
+
+        reader.readAsDataURL(blobFile);
+
+        imageNameElement.text("Uploaded : " + blobFile.name);
+        imageNameElement.addClass("uploaded");
     });
 
 })

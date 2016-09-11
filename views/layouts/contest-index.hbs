@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>Pixtory Curation Tool</title>
     {{#ifEqual mode "development"}}
-    <link type="text/css" rel="stylesheet" href="/stylesheets/normalize.css" />
-    <link type="text/css" rel="stylesheet" href="/stylesheets/skeleton.css" />
-    <link type="text/css" rel="stylesheet" href="/stylesheets/styles.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/skeleton.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/styles.css" />
     {{else}}
-    <link type="text/css" rel="stylesheet"  href="/stylesheets/dist/styles.min.css?v={{assetVersion}}" />
+    <link type="text/css" rel="stylesheet"  href="/portal/stylesheets/dist/styles.min.css?v={{assetVersion}}" />
     {{/ifEqual}}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" />
 </head>
@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row contest-top-nav v-offset-20 center">
             <div class="twelve columns">
-                <img src="/images/pixtory-logo.png" />
+                <img src="/portal/images/pixtory-logo.png" />
             </div>
         </div>
         <!-- container for messages -->
@@ -27,9 +27,9 @@
         {{{body}}}
     </div>
     {{#ifEqual mode "development"}}
-    <script type="text/javascript" src="/javascripts/lib/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/javascripts/lib/jquery-handlebars-1.1.5.min.js"></script>
-    <script type="text/javascript" src="/javascripts/lib/js.cookie.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/jquery-handlebars-1.1.5.min.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/lib/js.cookie.js"></script>
     <script type="text/javascript">
         /* handlebars templating configs */
         $.handlebars({
@@ -37,10 +37,10 @@
             templateExtension: "hbs"
         });
     </script>
-    <script type="text/javascript" src="/javascripts/utils.js"></script>
-    <script type="text/javascript" src="/javascripts/contest.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/utils.js"></script>
+    <script type="text/javascript" src="/portal/javascripts/contest.js"></script>
     {{else}}
-    <script type="text/javascript" src="/javascripts/dist/libs.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/libs.min.js?v={{assetVersion}}"></script>
     <script type="text/javascript">
         /* handlebars templating configs */
         $.handlebars({
@@ -48,8 +48,8 @@
             templateExtension: "hbs"
         });
     </script>
-    <script type="text/javascript" src="/javascripts/dist/utils.min.js?v={{assetVersion}}"></script>
-    <script type="text/javascript" src="/javascripts/dist/contest.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/utils.min.js?v={{assetVersion}}"></script>
+    <script type="text/javascript" src="/portal/javascripts/dist/contest.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
 </body>
 </html>

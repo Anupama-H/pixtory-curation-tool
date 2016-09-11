@@ -9,7 +9,7 @@
 
                 /* store user data in localstorage */
                 if(localStorage) {
-                    localStorage.setItem("userData", JSON.stringify(data));
+                    localStorage.setItem("userData", JSON.stringify(data.userDetails));
                 }
 
                 /* redirect to init page */
