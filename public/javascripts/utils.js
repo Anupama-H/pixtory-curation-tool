@@ -90,27 +90,34 @@
     Utils.logout = function() {
         var loginStrategy = Cookies.get("loginStrategy");
 
-        var onLogout = function() {
-            /* delete cookies */
-            Cookies.remove("loginStrategy");
+        var logoutUser = function() {
 
-            /* delete localstorage content */
-            localStorage.clear();
-
-            // TODO : call /contributor/logout API
             Utils.makeAjaxCall(App.apiEndPoint + "/contributor/logout", "GET", {
-            });
+                success: function() {
+                    /* delete cookies */
+                    Cookies.remove("loginStrategy");
 
-            /* redirect to login page */
-            window.location.href = App.logoutRedirect;
+                    /* delete localstorage content */
+                    localStorage.clear();
+
+                    /* redirect to login page */
+                    window.location.href = App.logoutRedirect;
+                },
+                error: function(errorMessage) {
+                    Utils.showMessage({
+                        type: "error",
+                        message: errorMessage
+                    });
+                }
+            });
         };
 
         /* logout from social networks */
         if(loginStrategy === "google") {
             var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(onLogout);
+            auth2.signOut().then(logoutUser);
         } else {
-            onLogout();
+            logoutUser();
         }
     };
 
