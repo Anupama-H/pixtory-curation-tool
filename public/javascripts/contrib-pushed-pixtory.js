@@ -2,7 +2,6 @@
     _AppEvent.subscribe("load.page", function() {
         var pixtoryThumbnailsElem = $(".jsPixtoryThumbnails"),
             pixtoryDetailElem = $(".jsPixtoryDetail");
-        var idParam;
 
         var clearQueryParam = function() {
             if (history.pushState) {
@@ -47,9 +46,13 @@
         };
 
         var handleBackBtn = function() {
+            var idParam = Utils.getQueryParameter("detail");
             Utils.clearQueryParam();
             pixtoryThumbnailsElem.show();
             pixtoryDetailElem.hide();
+            if(idParam) {
+                Utils.scrollToElement($("[data-id='" + idParam + "']"));
+            }
         }
 
         var showCommentsSection = function() {
@@ -58,14 +61,11 @@
             commentsElement.show();
 
             /* scroll to comments container */
-            var offset = commentsElement.offset();
-            $("body").animate({
-                scrollTop: offset.top,
-                scrollLeft: offset.left
-            });
+            Utils.scrollToElement(commentsElement);
         };
 
         var addComment = function() {
+            var idParam = Utils.getQueryParameter("detail");
             var commentObj = {
                 comment : $(".jsCommentInput").val(),
                 contentId: idParam
@@ -130,7 +130,7 @@
         pixtoryDetailElem.on("click", ".jsAddComment", addComment);
 
         /* if "detail" query parameter is present in URL, show Pixtory Detail Page */
-        idParam = Utils.getQueryParameter("detail");
+        var idParam = Utils.getQueryParameter("detail");
         if(idParam) {
             showPixtoryDetail(idParam);
         }

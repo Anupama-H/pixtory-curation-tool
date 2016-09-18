@@ -1,6 +1,37 @@
 (function(Handlebars) {
     var Utils = {};
 
+    Utils.dataURItoBlob = function(dataURI) {
+        /* convert base64/URLEncoded data component to raw binary data held in a string */
+        var byteString,
+            dataURIArray = dataURI.split(",");
+
+        if (dataURIArray[0].indexOf("base64") >= 0) {
+            byteString = atob(dataURIArray[1]);
+        } else {
+            byteString = unescape(dataURIArray[1]);
+        }
+
+        /* separate out the mime component */
+        var mimeString = dataURIArray[0].split(":")[1].split(";")[0];
+
+        /* write the bytes of the string to a typed array */
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+
+        return new Blob([ia], {type:mimeString});
+    };
+
+    Utils.scrollToElement = function(element) {
+        var offset = element.offset();
+        $("body").animate({
+            scrollTop: offset.top,
+            scrollLeft: offset.left
+        });
+    };
+
     Utils.getUser = function() {
         if(localStorage) {
             var user = localStorage.getItem("userData");
@@ -53,12 +84,13 @@
 
         messageElement.addClass("msg-" + type).html(message).show();
         if(hide) {
-            messageElement.delay(2000).hide();
+            messageElement.delay(3000).hide();
         }
     };
 
     Utils.clearMessages = function() {
         $(".jsMessage").hide().html("");
+        $(".jsMessage").removeClass("msg-error msg-success");
     };
 
     Utils.getQueryParameter= function(param) {
@@ -119,6 +151,36 @@
         } else {
             logoutUser();
         }
+    };
+
+    Utils.showModal = function(options) {
+        var $mOverlay = $(".jsModalOverlay"),
+            $mBox = $(".jsModalBox"),
+            modalOverlay = $mOverlay.length ? $mOverlay : $("<div class='m-overlay jsModalOverlay'></div>"),
+            modalBox= $mBox.length ? $mBox : $("<div class='m-box jsModalBox'><div class='clearfix'><span class='m-close jsModalClose'>&#10005;</span></div><div class='m-cont jsModalCont'></div></div>");
+
+        var hideModal = function() {
+            modalOverlay.hide();
+            $(".jsModalCont").html("");
+            modalBox.hide();
+        };
+
+        if(!$mOverlay.length) {
+            $("body").append(modalOverlay, modalBox);
+        } else {
+            modalOverlay.show();
+            modalBox.show();
+        }
+
+        if(options.template) {
+            $(".jsModalCont").render(options.template, options.data);
+        } else {
+            $(".jsModalCont").html(options.templateString);
+        }
+
+        /* setup close handlers */
+        modalOverlay.on("click", hideModal);
+        $(".jsModalClose").on("click", hideModal);
     };
 
     /* Handlebars Helpers */

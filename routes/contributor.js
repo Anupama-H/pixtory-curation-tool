@@ -41,4 +41,21 @@ router.get("/notifications", function(req, res, next) {
   });
 });
 
+/* GET Profile Page */
+router.get("/profile", function(req, res, next) {
+  res.render("contributor/profile", {
+      "page": "PROFILE",
+      "hideLeftNav": true
+  });
+});
+
+/* GET FAQ Page */
+router.get("/faq", function(req, res, next) {
+  res.render("contributor/faq", {
+      "page": "FAQ",
+      "hideLeftNav": true
+  });
+});
+
+
 module.exports = router;

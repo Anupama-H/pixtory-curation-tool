@@ -1,11 +1,11 @@
 (function(_AppEvent) {
     _AppEvent.subscribe("load.page", function() {
         var statusMap = {
-                1: "SUBMITTED",
-                2: "PROCESSING", //processing
-                3: "REJECTED", //rejected
-                4: "PUSHED" // pushed
-            };
+            1: "SUBMITTED",
+            2: "PROCESSING",
+            3: "REJECTED",
+            4: "PUSHED"
+        };
 
         var thumbnailsContainer = $(".jqThumbnailsCont"),
             pixtoryThumbnailsElem = $(".jsPixtoryThumbnails"),
@@ -16,7 +16,7 @@
         var showPixtoryList = function(data) {
             var processedData = data.map(function(obj) {
                 delete obj.likes;
-                obj.status = statusMap[obj.status];
+                obj.statusString = statusMap[obj.status];
                 return obj;
             });
             pixtoryThumbnailsElem.render("contrib-pixtory-list", processedData);
@@ -45,9 +45,13 @@
         };
 
         var handleBackBtn = function() {
+            var idParam = Utils.getQueryParameter("detail");
             Utils.clearQueryParam();
             thumbnailsContainer.show();
             pixtoryDetailElem.hide();
+            if(idParam) {
+                Utils.scrollToElement($("[data-id='" + idParam + "']"));
+            }
         }
 
         var showFilteredData = function(event) {
@@ -56,7 +60,7 @@
 
             if(selected !== "ALL") {
                 filteredData = allPixtories.filter(function(obj) {
-                    return obj.status === selected;
+                    return statusMap[obj.status] === selected;
                 });
             } else {
                 filteredData = allPixtories;

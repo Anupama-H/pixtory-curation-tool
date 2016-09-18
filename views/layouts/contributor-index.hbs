@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Pixtory Curation Tool</title>
     {{#ifEqual mode "development"}}
-    <link type="text/css" rel="stylesheet"  href="/portal/stylesheets/normalize.css" />
-    <link type="text/css" rel="stylesheet"  href="/portal/stylesheets/skeleton.css" />
-    <link type="text/css" rel="stylesheet"  href="/portal/stylesheets/styles.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/skeleton.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/croppie.css" />
+    <link type="text/css" rel="stylesheet" href="/portal/stylesheets/styles.css" />
     {{else}}
     <link type="text/css" rel="stylesheet"  href="/portal/stylesheets/dist/styles.min.css?v={{assetVersion}}" />
     {{/ifEqual}}
@@ -17,9 +18,18 @@
 <body>
     <hr class="top-line"/>
     {{#ifNotEqual page "LOGIN"}}
-    {{>top-bar}}
+    {{>contrib-top-bar}}
     <div class="container content-body">
         <div class="row">
+            {{#if hideLeftNav}}
+            <div class="twelve columns">
+                <!-- container for messages -->
+                <div class="row">
+                    <div class="twelve columns msg hidden jsMessage"></div>
+                </div>
+                {{{body}}}
+            </div>
+            {{else}}
             <div class="two columns">
                 {{>contributor-nav}}
             </div>
@@ -30,6 +40,7 @@
                 </div>
                 {{{body}}}
             </div>
+            {{/if}}
         </div>
     </div>
     {{else}}

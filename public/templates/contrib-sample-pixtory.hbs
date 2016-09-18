@@ -1,0 +1,18 @@
+{{#for 0 this.length 1}}
+{{#ifModuloEqual this.index 3 0}}
+<div class="row v-offset-15">
+{{/ifModuloEqual}}
+<div class="four columns flip-container">
+	<div class="flipper">
+		<div class="front">
+			<img src="{{this.data.front}}"/>
+		</div>
+		<div class="back">
+			<img src="{{this.data.back}}"/>
+		</div>
+	</div>
+</div>
+{{#ifModuloPlusEqual this.index 3 0}}
+</div>
+{{/ifModuloPlusEqual}}
+{{/for}}
