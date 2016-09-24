@@ -44,16 +44,14 @@ router.get("/notifications", function(req, res, next) {
 /* GET Profile Page */
 router.get("/profile", function(req, res, next) {
   res.render("contributor/profile", {
-      "page": "PROFILE",
-      "hideLeftNav": true
+      "page": "PROFILE"
   });
 });
 
 /* GET FAQ Page */
 router.get("/faq", function(req, res, next) {
   res.render("contributor/faq", {
-      "page": "FAQ",
-      "hideLeftNav": true
+      "page": "FAQ"
   });
 });
 

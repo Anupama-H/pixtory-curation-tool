@@ -1,14 +1,22 @@
 <div class="jqThumbnailsCont">
-    <label>
-        Filter by
-        <select class="h-offset-15 jqFilter">
-            <option value="ALL">All</option>
-            <option value="SUBMITTED">Submitted</option>
-            <option value="PROCESSING">Processing</option>
-            <option value="PUSHED">In the App</option>
-            <option value="REJECTED">Rejected</option>
-        </select>
-    </label>
+    <div class="clearfix">
+        <label class="pull-left">
+            Filter by
+            <select class="h-offset-15 jqFilter">
+                <option value="ALL">All</option>
+                <option value="SUBMITTED">Submitted</option>
+                <option value="PROCESSING">Processing</option>
+                <option value="PUSHED">In the App</option>
+                <option value="REJECTED">Rejected</option>
+            </select>
+        </label>
+        <ul class="status-help pull-right">
+            <li class="s-blk-SUBMITTED">SUBMITTED</li>
+            <li class="s-blk-PROCESSING">PROCESSING</li>
+            <li class="s-blk-PUSHED">PUSHED</li>
+            <li class="s-blk-REJECTED">REJECTED</li>
+        </ul>
+    </div>
     <div class="jsPixtoryThumbnails">
         <img src="/portal/images/loader.gif" class="loader"/>
     </div>

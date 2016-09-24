@@ -31,6 +31,10 @@ img:not([src]) {
     display: inline-block;
 }
 
+.align-center {
+    text-align: center;
+}
+
 .pull-left {
     float: left;
 }
@@ -51,6 +55,14 @@ img:not([src]) {
 
 .font-normal {
     font-weight: normal;
+}
+
+.v-offset-top-10 {
+    margin-top: 10px;
+}
+
+.v-offset-top-25 {
+    margin-top: 25px;
 }
 
 .v-offset-15 {
@@ -127,14 +139,17 @@ img:not([src]) {
     border: 1px solid #D16666 !important;
 }
 
-.submit-btn {
-    width: 50%;
+.btn-blue {
     font-size: 14px;
     background-color: #31AEF5 !important;
 }
 
-.submit-btn:hover {
+.btn-blue:hover {
     background-color: #53BDF9 !important;
+}
+
+.submit-btn {
+   width: 50%;
 }
 
 .upload-msg {
@@ -176,65 +191,13 @@ img:not([src]) {
     cursor: pointer;
 }
 
-.resources-cont {
-    position: relative;
-}
-
 .resources-lbl {
     cursor: pointer;
     font-size: 14px;
     color: #31AEF5;
     text-align: right;
     margin: 0;
-}
-
-.resources-lbl:after {
-    content: "\25BC";
-/*    content: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");*/
-    font-size: 10px;
-    margin-left: 6px;
-}
-
-.resources-chk:checked ~ .resources-lbl:after {
-    content: "\25B2";
-}
-
-.resources-dd {
-    color: #FFF;
-    background: #5ABAF1;
-    position: absolute;
-    font-size: 14px;
-    border: 1px solid;
-    border-radius: 2px;
-    right: 0;
-}
-
-.resources-dd:before {
-/*
-    content: "";
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-bottom: 6px solid rgba(0,0,0,0.8);
-    position: absolute;
-    top: -12px;
-    left: 79px;
-*/
-}
-
-.resources-dd li {
-    cursor: pointer;
-    padding: 5px 30px;
-    margin: 0;
-}
-
-.resources-dd li:hover {
-    background-color: #31aef5;
-    color: #FFF;
-}
-
-.resources-chk:checked ~.resources-dd {
-    display: block;
+    display: inline-block;
 }
 
 /* login page CSS */
@@ -652,6 +615,54 @@ img:not([src]) {
     background-image: url("/portal/images/rejected-blk.png");
 }
 
+.status-help li {
+    font-size: 13px;
+    height: 17px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+    margin-right: 15px;
+}
+
+.status-help li:last-child {
+    margin-right: 0;
+}
+
+.tabs {
+    position: relative;
+}
+
+.tabs .tab {
+    display: inline-block;
+}
+
+.tabs label {
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.tabs input[type="radio"], .tabs .content {
+    display: none;
+}
+
+.tabs .content {
+    left: 0;
+    position: absolute;
+}
+
+.tabs input[type="radio"]:checked ~ label {
+    color: #FFF;
+    background: #696969;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.tabs input[type="radio"]:checked ~ .content {
+    display: block;
+}
+
 /* Contributor Notifications Page CSS */
 .notif-cont {
     margin-left: 50px;
@@ -673,24 +684,24 @@ img:not([src]) {
 
 /* Modal styles */
 .m-overlay {
+    /* TODO : remove height hardcoding */
+    height: 9800px;
     position: absolute;
     top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    width: 100%;
     background: rgba(0,0,0,0.8);
 }
 
 .m-box {
     width: 75%;
     position: absolute;
-    top: 50%;
+    top: 30px;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
     background: #F8F8F8;
 
     border-radius: 5px;
@@ -707,57 +718,6 @@ img:not([src]) {
 }
 
 /* Modal styles end */
-
-/* flipper CSS */
-
-.flip-container {
-    -webkit-perspective: 1000px;
-	perspective: 1000px;
-}
-
-.flip-container:hover .flipper {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
-
-.flipper, .front, .back, .flipper img {
-	width: 100%;
-}
-
-.flipper {
-    height: 524px;
-    -webkit-transition: 0.6s;
-	transition: 0.6s;
-    -webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-    -webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-    -webkit-transform: rotateY(0deg);
-	transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-    -webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-}
-
-/* flipper CSS end */
-
 
 /* contest page styles */
 .contest-top-nav {
@@ -792,4 +752,43 @@ img:not([src]) {
 
 .step2 {
     margin-top: 30px;
+}
+
+/* profile page styles */
+.profile-image {
+    width: 100px;
+    height: 100px;
+}
+
+/* FAQ page styles */
+.faq dt {
+    font-weight: bold;
+}
+
+.faq dd {
+    margin-bottom: 10px;
+}
+
+.faq p {
+    margin-bottom: 10px;
+}
+
+/* how to create page styles */
+
+.how-to-create ul {
+    margin-left: 30px;
+}
+
+.how-to-create ul li {
+    list-style-type: circle;
+}
+
+.sample-pixtories .pixtory img {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.sample-pixtories .pixtory img, .sample-pixtories .pixtory .title{
+    text-align: center;
 }

@@ -1,13 +1,6 @@
 <div class="row">
-    <div class="twelve columns">
-        <div class="resources-cont">
-            <input type="checkbox" class="resources-chk hidden jsClkBlk jsResourcesChk" id="resourcesChk">
-            <label for="resourcesChk" class="resources-lbl jsClkBlk">Resources</label>
-            <ul class="resources-dd hidden jsResourcesDD">
-                <li data-action="how-pixtory" class="jsClkBlk">How to create better Pixtories</li>
-                <li data-action="sample-pixtory" class="jsClkBlk">Sample Pixtories</li>
-            </ul>
-        </div>
+    <div class="twelve columns align-right">
+        <label  class="resources-lbl jsHowToCreate">How to create better Pixtories</label>
     </div>
 </div>
 <div class="row center">
@@ -18,11 +11,11 @@
                     <label for="pixtoryImage" class="upload-msg">Upload an Image *</label>
                 </div>
                 <div class="hidden jsUpload2">
-                    <div class="note-text v-offset-15"><b>Note:</b> Drag the picture left/ right to check if it fits into the portrait size<br/>This is not the final image, we'll do the cropping from our end</div>
+                    <div class="note-text v-offset-15"><b>Note:</b> Drag or zoom the picture left/right to check if it fits into the portrait size<br/>This is not the final image, we'll do the cropping from our end</div>
                     <div class="jsCroppie"></div>
                     <label class="change-btn" for="pixtoryImage">Change Image</label>
                 </div>
-                <input class="hidden jsPixtoryImage" type="file" name="image" id="pixtoryImage"/>
+                <input class="hidden jsPixtoryImage" type="file" name="originalImage" id="pixtoryImage"/>
             </div>
             <div class="step-half">
                 <input type="text" name="title" placeholder="Title*" />
@@ -49,6 +42,7 @@
                 <label class="font-normal">
                     <select name="category2">
                         <option value="-1">Category 2</option>
+                        <option value="1">Short Read</option>
                         <option value="2">Long Read</option>
                         <option value="3">Poem</option>
                         <option value="4">Perspective</option>
@@ -67,7 +61,7 @@
                 <input type="text" name="customCategory" placeholder="Custom Category" />
                 <textarea type="text" name="story" placeholder="Story*"></textarea>
                 <div class="v-offset-25">&nbsp;</div>
-                <input class="button-primary submit-btn jsCreatePixtory" type="submit" value="Submit">
+                <input class="button-primary btn-blue submit-btn jsCreatePixtory" type="submit" value="Submit">
             </div>
         </form>
     </div>

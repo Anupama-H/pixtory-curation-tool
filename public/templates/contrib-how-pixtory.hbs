@@ -1,5 +1,111 @@
-<div class="row">
+<div class="row how-to-create">
     <div class="twelve columns">
-        Some text indicating how to create pixtory
+    <ol>
+        Contents:
+        <li><a href="#components">Components of a Pixtory</a></li>
+        <li><a href="#sample-pixtories">Sample Pixtories</a></li>
+    </ol>
+    <div id="components">
+        <b>Components of a Pixtory: Each unit adds value to the users:</b><br />
+        <b>Title</b> - A title helps the user to decide to read the story or not<br />
+        <b>Location</b> - Value adding unit (for some pictures that genuinely have no location, you can skip this)<br />
+        <b>Picture</b> - Images have to be portrait (landscape images are fine as long as the crux of the image should not be lost when we edit it into portrait size)<br />
+        <b>Categories</b> – Choose from the list of categories your Pixtories closely relate to. Choose them based on the type of stories you write for a picture<br />
+        <b>Story<b> -
+        <ul>
+            <li>Could be the reason for clicking the picture or an experience or something new/ un-common or an emotion or just interesting facts etc. Totally depends on your thinking and style of writing and storytelling, plays an important role in defining the character of any photograph.</li>
+            <li>There's no word limit on stories as such, but not many of them should be short (be flexible as long as the essence of the story is captured)</li>
+        </ul>
+        <p>We’ve put together a framework to assist you to write stories and think about how they add value</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>Category</td>
+                    <td>Definition</td>
+                    <td>How do you measure impact</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Experience</td>
+                    <td>Sharing experience. Like a first person real story</td>
+                    <td>
+                        <ul>
+                            <li>Did it inspire you</li>
+                            <li>Did it strike an emotional chord</li>
+                            <li>Did it make you smile</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Knowledge</td>
+                    <td>Some kind of knowledge shared (or) there is some kind of factual information that you believe will be useful for people</td>
+                    <td>
+                        <ul>
+                            <li>Did you learn something new</li>
+                            <li>Did it validate or add on to something that you know and believe is important</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Philosophy</td>
+                    <td>Stories that focus on introspection, fundamental nature of knowledge, reality and existence</td>
+                    <td>
+                        <ul>
+                            <li>Did it strike an emotional chord</li>
+                            <li>Did the power of simplicity get you thinking</li>
+                            <li>Could you relate it to something in your life</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Humour</td>
+                    <td>Stories that are funny, witty and make you laugh</td>
+                    <td>
+                        <ul>
+                            <li>Did you have a smile on your face</li>
+                            <li>Could you appreciate the subtleity of humour</li>
+                            <li>Could it make you laugh</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Fiction</td>
+                    <td>Pure fiction possibly narrated in 3rd person</td>
+                    <td>
+                        <ul>
+                            <li>Was it so gripping/interesting/touching that you were waiting to finish it</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Poetic</td>
+                    <td>Stories that have a poetic flavour to it</td>
+                    <td>
+                        <ul>
+                            <li>Did you enjoy reading the poem - because of either the message or the style of writing or both</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="sample-pixtories" class="sample-pixtories">
+        <h6>Sample Pixtories</h6>
+        <p>Here are some Pixtories that we’ve got from our existing pool of contributors. It features the different types of stories – use this as reference, will give you a good idea about the variety in style and how it adds value</p>
+        {{#for 0 this.length 1}}
+        <div class="pixtory">
+            <img src="{{this.data.image}}" />
+            <div class="title">{{this.data.title}}</div>
+            <div class="story">{{{this.data.story}}}</div>
+        </div>
+        {{/for}}
     </div>
 </div>

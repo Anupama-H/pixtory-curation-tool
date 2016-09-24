@@ -36,6 +36,9 @@
     {{#ifEqual page "NOTIF"}}
     <script type="text/javascript" src="/portal/javascripts/contrib-notifications.js"></script>
     {{/ifEqual}}
+    {{#ifEqual page "PROFILE"}}
+    <script type="text/javascript" src="/portal/javascripts/contrib-profile.js"></script>
+    {{/ifEqual}}
     <script type="text/javascript" src="/portal/javascripts/app.js"></script>
 {{else}}
     <script type="text/javascript" src="/portal/javascripts/dist/libs.min.js?v={{assetVersion}}"></script>
@@ -71,6 +74,9 @@
     {{/ifEqual}}
     {{#ifEqual page "NOTIF"}}
     <script type="text/javascript" src="/portal/javascripts/dist/contrib-notifications.min.js?v={{assetVersion}}"></script>
+    {{/ifEqual}}
+    {{#ifEqual page "PROFILE"}}
+    <script type="text/javascript" src="/portal/javascripts/dist/contrib-profile.min.js?v={{assetVersion}}"></script>
     {{/ifEqual}}
     <script type="text/javascript" src="/portal/javascripts/dist/app.min.js?v={{assetVersion}}"></script>
 {{/ifEqual}}

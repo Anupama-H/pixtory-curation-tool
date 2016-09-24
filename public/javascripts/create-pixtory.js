@@ -103,6 +103,56 @@
 
         };
 
+        var showHowToCreateModal = function() {
+            var data = [{
+                    image: "/portal/images/sample-pixtories/pix1.jpg",
+                    title: "To the infamous Silk Roads of China",
+                    story: "<p>Crossing the Taklamakan, the world's second largest desert, was no easy task for Silk Road travellers. As a result of this trade, numerous small oasis towns sprung up on its edges. Many were run by groups of bandits who stole treasure from the caravans. These treasures, many of them invaluable, such as old manuscripts from China, India and around are still buried under the desert, slowly being excavated!</p><p>The desert also has a highway running right across its belly. With a dozen thin water pipes squirting out water 24/7, reeds and grasses are grown alongside the highway to prevent the shifting sands from enveloping the road. You have to wonder where the water comes from…</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix2.jpg",
+                    title: "First meeting lasts a lifetime",
+                    story: "Appointment with God<br />Pounding heart and beads of sweat,<br />Tears of joy and sin I forget,<br />Dry lips chanting holy word,<br />For I know, today nothing would do unheard.<br />...<br />That first meeting lasts a lifetime."
+                }, {
+                    image: "/portal/images/sample-pixtories/pix3.jpg",
+                    title: "Safdarjung Tomb",
+                    story: "<p>Let me tell you a funny story.</p><p>Last month after returning from Cambodia I wanted to visit Humayun's Tomb in New Delhi.</p><p>I was hosted by people who live in and around Delhi. As I set foot for the day, the rickshaw wala took us to a historical building saying it's Humayun's Tomb. We saw the Tomb, returned home and realised much later in the day that we had seen Safdarjung Tomb and not Humayun's.</p><p>What irony! People who hosted me and have been living in Delhi forever were confused between the two. I guess we all have that one silly friend anyway. Posing to the idea that this is Humayun's tomb!</p><p>At least it's now a tale to tell and Humayun's Tomb remains unchecked! That's sure next on my list.</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix4.jpg",
+                    title: "Delhi Cafe",
+                    story: "<p>One fine evening after my duty hours in the hospital, I was strolling through the streets of Delhi. I always stop at a different metro station so that I can explore the area nearby.</p><p>On this day I came across a cafe called Sakleys. As soon as I entered, I was greeted by the lady in the picture. When she smiled, her eyes held the beauty of the universe, enchanting enough to make me come to the cafe everyday onwards. So, did I?</p><p>Is that even a question?</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix5.jpg",
+                    title: "The Unspoken",
+                    story: "<p>She ran the water for a bath and started to undress but seconds before getting into the water she sat on the edge of the bathtub and that is when she discovered how tired she was. She closed the tap and just sat there, her feet making little waves in the warm water and the water making a clopping noise that was unmusical but always therapeutic somehow. </p><p>She sat there a long time and if he had passed the bathroom door and seen her that way, he wouldn’t have perceived the resignation in the arc of her back, the frustrated hope in her upturned neck, or the thwarted longing in her arms that hung slack and close to her chest. All he would have seen was his wife taking a moment before her bath, a private moment that he naturally shouldn’t impinge on. </p><p>He was considerate that way but he was not perceptive and so, in her perch on the bathtub, he missed all the things her body said that could not be put in words. You could live with someone for years and not know the language of their body.</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix6.jpg",
+                    title: "Treasure of Memories",
+                    story: "<p>What you see is a normal house.</p><p>What I see is a house full of laughter and memories.</p><p>Most of my childhood was spent in this house. This house was my grandma's, who was the only grandparent we had while growing up. </p><p>It's been 9 years since she left us, but whenever I come here to visit this place, I only think of her and the days we spent with her. The house still remains, but its soul is missing.</p><p></p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix7.jpg",
+                    title: "Imarti. That thick'er' cousin of jalebi that nobody wants to be seen with",
+                    story: "<p>I didn’t say Imarti is thick. I just said it’s thicker than a regular jalebi. It’s the difference between F-A-T fat and P-H-A-T fat. Like JLo’s butt. Or Alia Bhatt’s brain. The right kind of thick. And still, somehow, nobody wants to be seen with this cousin. It’s Holi. It’s the time for thandai and karanji and gujhiya and malpua and jalebi. Imarti still gets no love. Not even on Holi. That’s rough.</p><p>You know why? You don’t. Because, as always, I have a theory. Of course I do. The reason lies outside the realm of jalebi and imarti. The reason is rabdi. Ever eaten imarti and rabdi? It doesn’t work. Believe me I have tried. It doesn’t work. It just doesn't. Jalebi is Thumbs Up to Imarti’s Pepsi when trying to pair it up with Rabdi’s Old Monk. You see what happened there? Ever order Pepsi and Old Monk at a bar? You will be kicked right out of there in no time. </p><p>Even typing out the words Pepsi and Old Monk in the same sentence is sacrilege. Thumbs Up + Old Monk. That’s Jalebi + Rabdi. Game over imarti. Because no matter how good imarti can taste, jalebi + rabdi is a different level of pleasure altogether. The lesson as always is that world is cruel. You might be right kinds of thick and juicy and the prince will still walk away with someone else. Death and the bridegroom both ride a white horse. Such is life!</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix8.jpg",
+                    title: "Names",
+                    story: "<p>Over 50,000 gathered around Lake Eola to mourn the victims of the Pulse shooting. As the sun went down, the lake was illuminated by candles. Lining the lake were, flowers, flags, and the names of the victims.</p><p>After the speakers had all spoken and the musicians had all performed, the attendees became silent and the names of the victims were read aloud, one by one. As each name was read, small clusters of people around the lake cheered. They were friends and families of those deceased.</p><p>It was the first time I had ever cried for people I didn’t know.</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix9.jpg",
+                    title: "A Club in My Land",
+                    story: "<p>For over 12 years now, I’ve followed the English Premier League. The passion is high and the games, the victories, and the losses matter so much to us. The excitement and entertainment is beyond my ability to explain. I’m sure there are millions of football fans like me all over India.</p><p>We’ve always cribbed about Indian football or just simply chose to ignore it. But that has changed for me, and is changing for many these days. Bengaluru Football Club, founded in 2013, got the people in the city together. Initially, it was just a few people, being vocal, singing chants all throughout the game. That passion grew beyond them and has been spreading to reach every football enthusiast in the city.</p><p>West Block Blues, BFC’s most crazy fans always come out in huge numbers to support the club every other week. You can clearly see how much this means to us; it’s a bond that is just growing stronger. We sing, chant, and make creative yet intimidating banners; BFC is now one of the toughest teams to play in the country at their home.</p><p>This season we even had pre-match rituals with flares and chants to get into the mood for the game. 2 championships in 3 years of existence - now that’s an amazing feat.</p><p></p><p>Best club, best fans. If this is in any way an indication, Indian football is on the rise, and fast.</p><p>What remains is - will you be in that number when the blues go marching in?</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix10.jpg",
+                    title: "Flamingo",
+                    story: '<p>Flamingos migrate to India during the winters and are seen near coastal areas or large water reservoirs. While they are well known for their synchronized dancing routines as mating rituals, did you know that they are pink primarily because of the crustaceans they eat? Shrimp and algae have carotenoids, which have pigments that turn the flamingos pink.</p><p>Perfect example of "You are what you eat" :)</p>'
+                }
+            ];
+
+            Utils.showModal({
+                template: "contrib-how-pixtory",
+                data: data
+            });
+        };
+
         var setupPixtoryImageCropper = function() {
             var croppieElem = $(".jsCroppie");
 
@@ -158,58 +208,25 @@
 
             /* Enable/disable select input event handler */
             $("select").on("change", function() {
-                var $this = $(this);
-                if(this.value !== "-1") {
+                var $this = $(this),
+                    selectValue = this.value,
+                    currentSelectBox = $this.attr("name"),
+                    otherSelectBox = (currentSelectBox === "category1") ? "category2" : "category1";
+
+                if(selectValue !== "-1") {
                     $this.addClass("select-enable");
                 } else {
                     $this.removeClass("select-enable");
                 }
+
+                /* disable current selected value in the other select box */
+                $("option").removeAttr("disabled");
+                $("[name='" + otherSelectBox + "'] option[value='" + selectValue + "']").attr("disabled", "disabled");
             });
+
+            $(".jsHowToCreate").on("click", showHowToCreateModal);
         };
 
-        var setupResourcesEventHandlers = function() {
-
-            var handleDDClick = function(event) {
-                var action = $(event.target).attr("data-action");
-
-                switch(action) {
-                    case "how-pixtory":
-                        Utils.showModal({
-                            template: "contrib-how-pixtory"
-                        });
-                        break;
-                    case "sample-pixtory":
-                        var data = [{
-                            front: "/portal/images/sample-pixtories/1-front.jpg",
-                            back: "/portal/images/sample-pixtories/1-back.jpg",
-                        }, {
-                            front: "/portal/images/sample-pixtories/2-front.jpg",
-                            back: "/portal/images/sample-pixtories/2-back.jpg",
-                        }, {
-                            front: "/portal/images/sample-pixtories/3-front.jpg",
-                            back: "/portal/images/sample-pixtories/3-back.jpg",
-                        }];
-
-                        Utils.showModal({
-                            template: "contrib-sample-pixtory",
-                            data: data
-                        });
-                        break;
-                }
-            };
-
-            $(".jsResourcesDD").on("click", handleDDClick);
-            $("body").on("click", function(event) {
-                if(!$(event.target).hasClass("jsClkBlk")) {
-                    var checkBoxElement = $(".jsResourcesChk");
-                    if(checkBoxElement.is(":checked")) {
-                        checkBoxElement.prop("checked", false);
-                    }
-                }
-            });
-        };
-
-        setupResourcesEventHandlers();
         setupFormEventHandlers();
         setupPixtoryImageCropper();
     });

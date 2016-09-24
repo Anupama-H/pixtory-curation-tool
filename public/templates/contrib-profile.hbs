@@ -1,0 +1,12 @@
+<form class="form-group jsProfileForm">
+    <div class="four columns align-center">
+        <img src="{{this.imageUrl}}" class="profile-image jsUserImage"/>
+        <input class="hidden jsImageFile" type="file" name="imageUrl" id="imageUrl" value="{{this.imageUrl}}"/>
+        <label class="change-btn v-offset-top-10" for="imageUrl">Change Image</label>
+    </div>
+    <div class="six columns">
+        <input type="text" value="{{this.userName}}" name="userName" placeholder="Name"/>
+        <input type="text" value="{{this.description}}" name="userDescription" placeholder="Description"/>
+        <input class="button-primary btn-blue v-offset-top-25 pull-right jsUpdateUser" type="submit" value="Save">
+    </div>
+</form>
