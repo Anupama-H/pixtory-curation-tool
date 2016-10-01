@@ -107,11 +107,13 @@
             var data = [{
                     image: "/portal/images/sample-pixtories/pix1.jpg",
                     title: "To the infamous Silk Roads of China",
+                    subtitle: "Taklamakan, China",
                     story: "<p>Crossing the Taklamakan, the world's second largest desert, was no easy task for Silk Road travellers. As a result of this trade, numerous small oasis towns sprung up on its edges. Many were run by groups of bandits who stole treasure from the caravans. These treasures, many of them invaluable, such as old manuscripts from China, India and around are still buried under the desert, slowly being excavated!</p><p>The desert also has a highway running right across its belly. With a dozen thin water pipes squirting out water 24/7, reeds and grasses are grown alongside the highway to prevent the shifting sands from enveloping the road. You have to wonder where the water comes from…</p>"
                 }, {
                     image: "/portal/images/sample-pixtories/pix2.jpg",
                     title: "First meeting lasts a lifetime",
-                    story: "Appointment with God<br />Pounding heart and beads of sweat,<br />Tears of joy and sin I forget,<br />Dry lips chanting holy word,<br />For I know, today nothing would do unheard.<br />...<br />That first meeting lasts a lifetime."
+                    story: "<p>Appointment with God<br />Pounding heart and beads of sweat,<br />Tears of joy and sin I forget,<br />Dry lips chanting holy word,<br />For I know, today nothing would do unheard.<br />...<br />That first meeting lasts a lifetime.</p>",
+                    center: true
                 }, {
                     image: "/portal/images/sample-pixtories/pix3.jpg",
                     title: "Safdarjung Tomb",
@@ -144,6 +146,25 @@
                     image: "/portal/images/sample-pixtories/pix10.jpg",
                     title: "Flamingo",
                     story: '<p>Flamingos migrate to India during the winters and are seen near coastal areas or large water reservoirs. While they are well known for their synchronized dancing routines as mating rituals, did you know that they are pink primarily because of the crustaceans they eat? Shrimp and algae have carotenoids, which have pigments that turn the flamingos pink.</p><p>Perfect example of "You are what you eat" :)</p>'
+                }, {
+                    image: "/portal/images/sample-pixtories/pix11.jpg",
+                    title: "Introspection",
+                    subtitle: "Fondation Fernet-Branca, Saint-Louis, France",
+                    story: "<p>Here I am, standing in front of this huge work of art. This is how great afternoons should be spent, visiting unpredictable places with friends. This is what I love so much about art museums, you never know what you're going to find inside of them. </p><p>You may see a poster of an exhibition in town and it may catch your attention, but once you're visiting that exhibition, it has nothing to do with what was on the paper. That's why we should always go and see things by ourselves, we shouldn't trust TV, newspaper or ads. </p><p>We never know what we are going to find in museums, and perhaps one day we'll find ourselves in it.</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix12.jpg",
+                    title: "Silfra",
+                    subtitle: "Silfra, Iceland",
+                    story: "<p>We know what's on top of continents, but do you know what lies beneath?</p><p>When two tectonic plates drift apart, a rift is formed in between. Silfra, located right between the Eurasian and North American tectonic plates, grows 2cm larger every year, creating fissures from which pure Langjökull glacier water emerges.</p><p>Neither black nor white, up nor down, left nor right. For 40 minutes, I explored the beauty of the between.</p>"
+                }, {
+                    image: "/portal/images/sample-pixtories/pix13.jpg",
+                    title: "Firsts",
+                    story: "<p>There is always that one person<br />you have known since<br />before that rude<br />awakening that dimmed<br />your shine.<br /><br />Reality, adults called it. <br />But you would much rather<br />go back to sleep,<br />in your dreams you have<br />never felt the need to dissect<br />your feelings<br />into their causes and catalysts.<br /><br />Isn't it a cruel game of<br />arbitrary occurrence who we meet<br />before world fucks us up and over,<br /><br />Imagine, a dice roll with a<br />thousand sides where eight <br />hundred and ninety two<br />of them will take you<br />to people who do<br />not have a one track mind<br />like you, but you have <br />already had their names<br />tattooed in your arteries just<br />moments before you woke up,<br />and now, there are no more firsts to fail at.</p>",
+                    center: true
+                }, {
+                    image: "/portal/images/sample-pixtories/pix14.jpg",
+                    title: "Normal reactions to abnormal things",
+                    story: "<p>Dear Milenka, </p><p>I realized something strange about myself today and thought I must share this with you. You see, it is only with you that I can share the sound of a tree falling in the forest of my soul. Do you know that saying? If a tree falls in a forest and no one hears it, did it still fall?</p><p> Such a terrible fate for the tree, isn’t it? Anyway, here is what I realized: Most people have normal reactions to normal things, and abnormal reactions to abnormal things. My good friend Max can calmly solve a knotty problem involving his tax returns. If, however, I tell him there is no god and we are all here alone, he will get agitated and mutter, “Don’t say that, Ivan.” But then you have me. I have abnormal reactions to normal things, and normal reactions to abnormal things. </p><p>The pending tax return will keep me up at night. I am too terrified to approach it. It seems to conceal a terrible truth about me. It is also full of inscrutable monsters who will laugh as I try to decode them. But show me unarguable proof that there is no god or tell me that the bride doesn’t want to get married and is lying in a field outside the church or break the news to me that I have a terminal illness and only six months to live – and the truth my dear Milenka is that I will bear all this news calmly, and the abnormality of these things will sustain my soul as though it has finally found something it can chew on. </p><p>Freud might say I am a melancholic and hence, unconsciously seeking destruction. Jung might say I can see the shadows of the collective unconscious. I don’t wish to even remotely suggest that I am something special, Milenka. I have no illusions about myself. But I notice this thing about me and it seems anomalous when compared to the rest of the people I meet, and I would like very much for you to tell me what you think. </p><p>I have also made the arrogant presumption, forgive me my dear - that you, with your vibrant mind and your softly penetrating eyes are also somewhat like me; chronically averse to the normal, but easily flowing into the abnormal, like a cat that avoids all the big beds in the house and instead crawls into a small, misshapen cardboard box and sleeps a beautiful sleep there for many hours. </p><p>Ivan</p>"
                 }
             ];
 

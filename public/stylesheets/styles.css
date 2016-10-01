@@ -57,6 +57,11 @@ img:not([src]) {
     font-weight: normal;
 }
 
+.square-bullets li{
+    list-style-type: square;
+    list-style-position: outside;
+}
+
 .v-offset-top-10 {
     margin-top: 10px;
 }
@@ -683,27 +688,17 @@ img:not([src]) {
 }
 
 /* Modal styles */
-.m-overlay {
-    /* TODO : remove height hardcoding */
-    height: 9800px;
+.modal {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
     position: absolute;
     top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.8);
 }
 
 .m-box {
-    width: 75%;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
     background: #F8F8F8;
-
+    width: 75%;
+    margin: 30px auto;
     border-radius: 5px;
 }
 
@@ -769,26 +764,69 @@ img:not([src]) {
     margin-bottom: 10px;
 }
 
-.faq p {
+.faq p, .sample-pixtories p {
     margin-bottom: 10px;
 }
 
 /* how to create page styles */
 
+.how-to-create label {
+    text-decoration: underline;
+}
+
 .how-to-create ul {
     margin-left: 30px;
 }
 
-.how-to-create ul li {
-    list-style-type: circle;
+.how-to-create li {
+    margin: 0;
+}
+.pixtory-table thead tr {
+    color: #FFF;
+    background: #8C8C8C;
 }
 
-.sample-pixtories .pixtory img {
+.pixtory-table td {
+    padding: 10px;
+}
+
+.pixtory-table ul {
+    margin-bottom: 0;
+}
+
+.sample-pixtories .pixtory {
+    margin-bottom: 30px;
+}
+
+.sample-pixtories img, .sample-pixtories .title, .sample-pixtories .subtitle {
+    text-align: center;
+}
+
+.sample-pixtories img {
     width: 300px;
     display: block;
     margin: 0 auto;
 }
 
-.sample-pixtories .pixtory img, .sample-pixtories .pixtory .title{
+.sample-pixtories .title {
+    margin-top: 15px;
+    color: #127FB7;
+}
+
+.sample-pixtories .subtitle {
+    color: #6F6E6E;
+    font-size: 12px;
+}
+
+.sample-pixtories .story {
+    margin-top: 15px;
+}
+
+.story-center {
     text-align: center;
+}
+
+.story-center p {
+    display: inline-block;
+    text-align: left;
 }

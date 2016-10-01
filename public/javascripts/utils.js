@@ -154,22 +154,25 @@
     };
 
     Utils.showModal = function(options) {
-        var $mOverlay = $(".jsModalOverlay"),
-            $mBox = $(".jsModalBox"),
-            modalOverlay = $mOverlay.length ? $mOverlay : $("<div class='m-overlay jsModalOverlay'></div>"),
-            modalBox= $mBox.length ? $mBox : $("<div class='m-box jsModalBox'><div class='clearfix'><span class='m-close jsModalClose'>&#10005;</span></div><div class='m-cont jsModalCont'></div></div>");
+        var $modal = $(".jsModal"),
+            modalElement = $modal.length ? $modal : $("<div class='modal jsModal'><div class='m-box jsModalBox'><div class='clearfix'><span class='m-close jsModalClose'>&#10005;</span></div><div class='m-cont jsModalCont'></div></div></div>");
 
-        var hideModal = function() {
-            modalOverlay.hide();
-            $(".jsModalCont").html("");
-            modalBox.hide();
+        var hideModal = function(event) {
+            event.stopPropagation();
+            var targetElement = $(event.target);
+            if(targetElement.hasClass("jsModal") || targetElement.hasClass("jsModalClose")) {
+                modalElement.hide();
+                $(".jsModalCont").html("");
+            }
         };
 
-        if(!$mOverlay.length) {
-            $("body").append(modalOverlay, modalBox);
+        if(!$modal.length) {
+            $("body").append(modalElement);
+            /* setup close handlers */
+            modalElement.on("click", hideModal);
+            $(".jsModalClose").on("click", hideModal);
         } else {
-            modalOverlay.show();
-            modalBox.show();
+            modalElement.show();
         }
 
         if(options.template) {
@@ -177,10 +180,6 @@
         } else {
             $(".jsModalCont").html(options.templateString);
         }
-
-        /* setup close handlers */
-        modalOverlay.on("click", hideModal);
-        $(".jsModalClose").on("click", hideModal);
     };
 
     /* Handlebars Helpers */
