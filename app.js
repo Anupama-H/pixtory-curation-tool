@@ -50,8 +50,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 /* set up contributor, admin and contest routes */
 app.use("/contributor", contributorRoutes);
-app.use("/admin", adminRoutes);
-app.use("/contest", contestRoutes);
 
 /* Commenting out stub-api on only dev mode for now
 if (app.get("env") === "development") { */

@@ -830,3 +830,9 @@ img:not([src]) {
     display: inline-block;
     text-align: left;
 }
+
+.map-success {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 12px;
+}
